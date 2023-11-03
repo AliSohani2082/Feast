@@ -49,6 +49,13 @@ jobs:
       #       exit 1
       #     fi
 
+      - name: Set package manager to bun
+        id: set-package-manager-to-bun
+        run: |
+          echo "manager=bun" >> $GITHUB_ENV
+          echo "command=install" >> $GITHUB_ENV
+          echo "runner=bunx" >> $GITHUB_ENV
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -72,17 +79,17 @@ jobs:
       - name: Install dependencies
         run: |
           cd client
-          ${{ env.runner }} ${{ env.command }}
+          ${{ env.manager }} ${{ env.command }}
 
       - name: Build with Next.js
         run: |
           cd client
-          ${{ env.runner }} next build
+          ${{ env.manager }} next build
 
       - name: Static HTML export with Next.js
         run: |
           cd client
-          ${{ env.runner }} next export
+          ${{ env.manager }} next export
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
