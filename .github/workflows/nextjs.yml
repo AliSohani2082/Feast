@@ -82,6 +82,7 @@ jobs:
         working-directory: client
         run: |
           cd client
+          mkdir out
           ${{ env.manager }} next build
 
       - name: Upload artifact
