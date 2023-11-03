@@ -1,11 +1,11 @@
+import { Models } from 'appwrite';
 import Link from 'next/link';
 
-import { Post } from '@/types';
 import PostStats from '@/components/shared/PostStats';
 import { useUserContext } from '@/context/AuthContext';
 
 type GridPostListProps = {
-  posts: Post[];
+  posts: Models.Document[];
   showUser?: boolean;
   showStats?: boolean;
 };
@@ -20,8 +20,8 @@ const GridPostList = ({
   return (
     <ul className="grid-container">
       {posts.map((post) => (
-        <li key={post.id} className="relative min-w-80 h-80">
-          <Link href={`/posts/${post.id}`} className="grid-post_link">
+        <li key={post.$id} className="relative min-w-80 h-80">
+          <Link href={`/posts/${post.$id}`} className="grid-post_link">
             <img
               src={post.imageUrl}
               alt="post"

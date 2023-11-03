@@ -22,7 +22,7 @@ const authLayout: React.FC<authLayoutProps> = ({ children }) => {
           width={1000}
           height={1000}
           src="/images/scale.webp"
-          alt="logo"
+          alt="side-image"
           className="hidden xl:block h-screen w-1/2 object-cover bg-no-repeat"
         />
       </>
