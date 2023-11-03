@@ -27,6 +27,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
         with:
           path: client
 
@@ -59,6 +60,7 @@ jobs:
 
       - name: Restore cache
         uses: actions/cache@v3
+      - uses: oven-sh/setup-bun@v1
         with:
           path: |
             client/.next/cache
