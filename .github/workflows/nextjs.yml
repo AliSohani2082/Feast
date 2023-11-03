@@ -92,7 +92,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          path: ./client/out
+          path: ./out
 
   # Deployment job
   deploy:
