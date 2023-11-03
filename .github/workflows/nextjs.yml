@@ -33,14 +33,14 @@ jobs:
       - name: Detect package manager
         id: detect-package-manager
         run: |
-          if [ -f "client/yarn.lock" ]; then
-            echo "manager=yarn" >> $GITHUB_ENV
+          if [ -f "client/bun.lockb" ]; then
+            echo "manager=bun" >> $GITHUB_ENV
             echo "command=install" >> $GITHUB_ENV
-            echo "runner=yarn" >> $GITHUB_ENV
+            echo "runner=bunx" >> $GITHUB_ENV
           elif [ -f "client/package.json" ]; then
-            echo "manager=npm" >> $GITHUB_ENV
+            echo "manager=bun" >> $GITHUB_ENV
             echo "command=ci" >> $GITHUB_ENV
-            echo "runner=npx --no-install" >> $GITHUB_ENV
+            echo "runner=bunx --no-install" >> $GITHUB_ENV
           else
             echo "Unable to determine package manager"
             exit 1
@@ -62,9 +62,9 @@ jobs:
         with:
           path: |
             client/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('client/**/package-lock.json', 'client/**/yarn.lock') }}-${{ hashFiles('client/**.[jt]s', 'client/**.[jt]sx') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('client/**/package-lock.json', 'client/**/bun.lockb') }}-${{ hashFiles('client/**.[jt]s', 'client/**.[jt]sx') }}
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('client/**/package-lock.json', 'client/**/yarn.lock') }}-
+            ${{ runner.os }}-nextjs-${{ hashFiles('client/**/package-lock.json', 'client/**/bun.lockb') }}-
 
       - name: Install dependencies
         run: |
