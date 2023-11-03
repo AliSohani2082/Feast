@@ -75,6 +75,8 @@ jobs:
       - name: Install dependencies
         working-directory: client
         run: |
+          cd client
+          echo "test=$(ls)" >> $GITHUB_ENV
           ${{ env.manager }} ${{ env.command }}
 
       - name: Build with Next.js
