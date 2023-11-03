@@ -1,11 +1,9 @@
 'use client';
-
-import { useState } from 'react';
 import * as z from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 import {
   Form,
@@ -21,14 +19,16 @@ import Loader from '@/components/shared/Loader';
 import { useToast } from '@/components/ui/use-toast';
 
 import { SigninValidation } from '@/lib/validation';
-import { signInAccount } from '@/lib/appwrite/api';
+import { useSignInAccount } from '@/lib/react-query/queries';
 import { useUserContext } from '@/context/AuthContext';
-import Logo from '@/components/shared/Logo';
 
 const SigninForm = () => {
   const { toast } = useToast();
+  const router = useRouter();
   const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
-  const [isLoading, setIsLoading] = useState(false);
+
+  // Query
+  const { mutateAsync: signInAccount, isPending } = useSignInAccount();
 
   const form = useForm<z.infer<typeof SigninValidation>>({
     resolver: zodResolver(SigninValidation),
@@ -39,22 +39,20 @@ const SigninForm = () => {
   });
 
   const handleSignin = async (user: z.infer<typeof SigninValidation>) => {
-    setIsLoading(true);
-    console.log(user);
     const session = await signInAccount(user);
 
     if (!session) {
       toast({ title: 'Login failed. Please try again.' });
-      setIsLoading(false);
+
       return;
     }
 
     const isLoggedIn = await checkAuthUser();
-    setIsLoading(false);
+
     if (isLoggedIn) {
       form.reset();
 
-      redirect('/');
+      router.push('/');
     } else {
       toast({ title: 'Login failed. Please try again.' });
 
@@ -65,7 +63,7 @@ const SigninForm = () => {
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
-        <Logo size="md" />
+        <img src="/assets/images/logo.svg" alt="logo" />
 
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
           Log in to your account
@@ -106,7 +104,7 @@ const SigninForm = () => {
           />
 
           <Button type="submit" className="shad-button_primary">
-            {isLoading || isUserLoading ? (
+            {isPending || isUserLoading ? (
               <div className="flex-center gap-2">
                 <Loader /> Loading...
               </div>

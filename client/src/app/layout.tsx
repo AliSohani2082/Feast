@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { AuthProvider } from '@/context/AuthContext';
-import QueryProvider from '@/lib/tanstack-query/QueryProvider';
+import QueryProvider from '@/lib/react-query/QueryProvider';
 
 const inter = Inter({
   subsets: ['latin'],

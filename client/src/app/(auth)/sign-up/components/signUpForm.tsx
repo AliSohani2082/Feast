@@ -27,7 +27,7 @@ import { useUserContext } from '@/context/AuthContext';
 
 const SignUpForm = () => {
   const { toast } = useToast();
-  // const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
+  const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
   const [isCreatingAccount, setIsCreatingAccount] = useState(false);
   const [isSigningInUser, setIsSigningInUser] = useState(false);
 
@@ -47,31 +47,31 @@ const SignUpForm = () => {
     setIsCreatingAccount(true);
     try {
       const newUser = await createUserAccount(user);
-      console.log(newUser);
-      // if (!newUser) {
-      //   toast({ title: "Sign up failed. Please try again." });
-      //   return;
-      // }
-      // setIsSigningInUser(true);
-      // const session = await signInAccount({
-      //   email: user.email,
-      //   password: user.password,
-      // });
-      // if (!session) {
-      //   toast({ title: "Something went wrong. Please login your new account" });
-      //   redirect("/sign-in");
-      //   return;
-      // }
-      // const isLoggedIn = await checkAuthUser();
-      // setIsCreatingAccount(false);
-      // setIsSigningInUser(false);
-      // if (isLoggedIn) {
-      //   form.reset();
-      //   redirect("/");
-      // } else {
-      //   toast({ title: "Login failed. Please try again." });
-      //   return;
-      // }
+      console.log('this is the new User: ', newUser);
+      if (!newUser) {
+        toast({ title: 'Sign up failed. Please try again.' });
+        return;
+      }
+      setIsSigningInUser(true);
+      const session = await signInAccount({
+        email: user.email,
+        password: user.password,
+      });
+      if (!session) {
+        toast({ title: 'Something went wrong. Please login your new account' });
+        redirect('/sign-in');
+        return;
+      }
+      const isLoggedIn = await checkAuthUser();
+      setIsCreatingAccount(false);
+      setIsSigningInUser(false);
+      if (isLoggedIn) {
+        form.reset();
+        redirect('/');
+      } else {
+        toast({ title: 'Login failed. Please try again.' });
+        return;
+      }
     } catch (error) {
       setIsSigningInUser(false);
       setIsCreatingAccount(false);
