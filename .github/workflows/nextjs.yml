@@ -68,9 +68,9 @@ jobs:
         with:
           path: |
             client/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('client/**/package-lock.json', 'client/**/bun.lockb') }}-${{ hashFiles('client/**.[jt]s', 'client/**.[jt]sx') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('client/**/bun.lockb') }}-${{ hashFiles('client/**.[jt]s', 'client/**.[jt]sx') }}
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('client/**/package-lock.json', 'client/**/bun.lockb') }}-
+            ${{ runner.os }}-nextjs-${{ hashFiles('client/**/bun.lockb') }}-
 
       - name: Install dependencies
         working-directory: client
