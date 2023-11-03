@@ -81,11 +81,13 @@ jobs:
       - name: Build with Next.js
         working-directory: client
         run: |
+          cd client
           ${{ env.manager }} next build
 
       - name: Static HTML export with Next.js
         working-directory: client
         run: |
+          cd client
           ${{ env.manager }} next export
 
       - name: Upload artifact
