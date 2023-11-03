@@ -87,8 +87,9 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
+        working-directory: client
         with:
-          path: client/out
+          path: out
 
   # Deployment job
   deploy:
