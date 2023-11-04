@@ -88,6 +88,9 @@ jobs:
         run: |
           cd client
           mkdir out
+          cd ./out
+          touch fuckyou.txt
+          cd ..
           ${{ env.manager }} next build
   
       - name: Upload artifact
