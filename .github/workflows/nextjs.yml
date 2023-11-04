@@ -83,7 +83,6 @@ jobs:
         with:
           name: out
           path: out
-          if-no-files-found: error
 
   deploy:
     environment:
