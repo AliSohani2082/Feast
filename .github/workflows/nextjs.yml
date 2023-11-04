@@ -94,7 +94,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: bundle
-          path: client/src
+          path: client
           if-no-files-found: error
 
   deploy:
