@@ -80,7 +80,7 @@ jobs:
           ls -l client/out
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: out
