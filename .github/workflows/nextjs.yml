@@ -77,13 +77,13 @@ jobs:
 
       - name: List files in the out folder
         run: |
-          ls -l .
+          ls -l client/out
 
       - name: Upload artifact
         uses: actions/upload-artifact@v1
         with:
           name: out
-          path: client/out
+          path: ../client/out
 
   deploy:
     environment:
