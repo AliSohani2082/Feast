@@ -71,9 +71,9 @@ jobs:
           ${{ env.manager }} ${{ env.command }}
       - name: Build with Next.js
         run: |
+          cd client
           mkdir out
-        #  touch out/fuckyou.txt
-        # ${{ env.manager }} next build
+          ${{ env.manager }} next build
 
       - name: List files in the out folder
         run: |
