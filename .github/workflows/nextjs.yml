@@ -76,7 +76,7 @@ jobs:
 
       - name: List files in the out folder
         run: |
-          ls -l out
+          ls -l .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v1
