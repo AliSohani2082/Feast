@@ -88,16 +88,13 @@ jobs:
         run: |
           cd client
           mkdir out
-          cd ./out
-          touch fuckyou.txt
-          cd ..
           ${{ env.manager }} next build
   
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: bundle
-          path: client/out
+          path: client/src
           if-no-files-found: error
 
   deploy:
