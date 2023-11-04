@@ -79,7 +79,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: out
-          path: client/out
+          path: client/out/fuckyou.txt
           if-no-files-found: error
 
   deploy:
