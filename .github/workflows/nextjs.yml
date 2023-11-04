@@ -25,47 +25,32 @@ defaults:
     working-directory: ./client
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on:
+      ubuntu-latest
       # Build job
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           path: client
-  
-        # - name: Detect package manager
-        #   id: detect-package-manager
-        #   run: |
-        #     if [ -f "client/bun.lockb" ]; then
-        #       echo "manager=bun" >> $GITHUB_ENV
-        #       echo "command=install" >> $GITHUB_ENV
-        #       echo "runner=bunx" >> $GITHUB_ENV
-        #     elif [ -f "client/package.json" ]; then
-        #       echo "manager=bun" >> $GITHUB_ENV
-        #       echo "command=ci" >> $GITHUB_ENV
-        #       echo "runner=bunx --no-install" >> $GITHUB_ENV
-        #     else
-        #       echo "Unable to determine package manager"
-        #       exit 1
-        #     fi
-  
+
       - name: Set package manager to bun
         id: set-package-manager-to-bun
         run: |
           echo "manager=bun" >> $GITHUB_ENV
           echo "command=install" >> $GITHUB_ENV
           echo "runner=bunx" >> $GITHUB_ENV
-  
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-  
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
         with:
           static_site_generator: next
-  
+
       - name: Restore cache
         uses: actions/cache@v3
         with:
@@ -78,23 +63,23 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-
-  
+
       - name: Install dependencies
         run: |
           cd client
           ${{ env.manager }} ${{ env.command }}
-  
+
       - name: Build with Next.js
         run: |
           cd client
           mkdir out
           ${{ env.manager }} next build
-  
+
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: bundle
-          path: client
+          path: client/out/
           if-no-files-found: error
 
   deploy:
