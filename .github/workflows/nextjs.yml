@@ -64,11 +64,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-
 
-      # - name: Install dependencies
-      #   run: |
-      #     cd ./client
-      #     ls -l .
-      #     ${{ env.manager }} ${{ env.command }}
+      - name: Install dependencies
+        with:
+          working-directory: client
+        run: |
+          cd ./client
+          ls -l .
+          ${{ env.manager }} ${{ env.command }}
       - name: Build with Next.js
         run: |
           cd ./client
@@ -81,7 +83,7 @@ jobs:
           ls -l client/out
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: out
           path: client/out
