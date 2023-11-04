@@ -82,7 +82,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: out
-          path: client/out
+          path: out
           if-no-files-found: error
 
   deploy:
