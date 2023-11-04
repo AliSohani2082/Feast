@@ -73,13 +73,13 @@ jobs:
 
       - name: List files in the out folder
         run: |
-          ls -l client/out
+          ls -l out
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: out
-          path: client/out
+          path: out
           if-no-files-found: error
 
   deploy:
