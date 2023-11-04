@@ -91,10 +91,10 @@ jobs:
           ${{ env.manager }} next build
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: bundle
-          path: client/out
+          path: out
           if-no-files-found: error
 
   # Deployment job
