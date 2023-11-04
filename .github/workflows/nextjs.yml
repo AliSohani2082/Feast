@@ -75,6 +75,10 @@ jobs:
           mkdir out
           ${{ env.manager }} next build
 
+      - name: List files in the out folder
+        run: |
+          ls -l client/out
+
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
