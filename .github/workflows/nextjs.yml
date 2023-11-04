@@ -20,9 +20,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-defaults:
-  run:
-    working-directory: ./client
+# defaults:
+#   run:
+#     working-directory: ./client
 jobs:
   build:
     runs-on:
