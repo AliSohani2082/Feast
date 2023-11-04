@@ -73,8 +73,7 @@ jobs:
         run: |
           cd client
           mkdir out
-          touch out/fuckyou.txt
-        # ${{ env.manager }} next build
+          ${{ env.manager }} next build
 
       - name: List files in the out folder
         run: |
@@ -84,7 +83,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: out
-          path: client/out/fuckyou.txt
+          path: client/out
           if-no-files-found: error
 
   deploy:
