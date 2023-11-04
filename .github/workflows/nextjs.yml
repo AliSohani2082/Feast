@@ -68,18 +68,18 @@ jobs:
         run: |
           cd client
           mkdir out
-          touch fuckyou.txt
+          touch out/fuckyou.txt
         # ${{ env.manager }} next build
 
       - name: List files in the out folder
         run: |
-          ls -l out
+          ls -l client/out
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: out
-          path: out
+          path: client/out
           if-no-files-found: error
 
   deploy:
