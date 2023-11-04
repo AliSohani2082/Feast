@@ -65,9 +65,10 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-
 
       - name: Install dependencies
+        working-directory: client
         run: |
           cd ./client
-          ls -l ./client
+          ls -l .
           ${{ env.manager }} ${{ env.command }}
 
       - name: Build with Next.js
