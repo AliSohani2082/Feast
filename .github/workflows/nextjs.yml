@@ -78,8 +78,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: bundle
-          path: client/out/*
+          name: out
+          path: client/
           if-no-files-found: error
 
   deploy:
