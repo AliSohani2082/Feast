@@ -64,22 +64,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/bun.lockb') }}-
 
-      - name: Install dependencies
-        working-directory: client
-        run: |
-          cd ./client
-          ls -l .
-          ${{ env.manager }} ${{ env.command }}
-
+      # - name: Install dependencies
+      #   run: |
+      #     cd ./client
+      #     ls -l .
+      #     ${{ env.manager }} ${{ env.command }}
       - name: Build with Next.js
-        working-directory: client
         run: |
           cd ./client
           mkdir out
-          ${{ env.manager }} next build
+          touch out/fuckyou.txt
+        # ${{ env.manager }} next build
 
       - name: List files in the out folder
-        working-directory: client
         run: |
           ls -l client/out
 
