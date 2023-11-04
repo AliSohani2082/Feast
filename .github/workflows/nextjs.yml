@@ -71,12 +71,12 @@ jobs:
       - name: Build with Next.js
         run: |
           mkdir out
-          touch out/fuckyou.txt
+        #  touch out/fuckyou.txt
         # ${{ env.manager }} next build
 
       - name: List files in the out folder
         run: |
-          ls -l client/out
+          ls -l out
 
       - name: Upload artifact
         uses: actions/upload-artifact@v1
