@@ -47,7 +47,7 @@ jobs:
           bun-version: latest
 
       - name: Setup Pages
-        uses: actions/configure-pages@v1
+        uses: actions/configure-pages@v2
         with:
           static_site_generator: next
 
@@ -80,10 +80,10 @@ jobs:
           ls -l client/out
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: out
-          path: ../client/out
+          path: client/out
 
   deploy:
     environment:
