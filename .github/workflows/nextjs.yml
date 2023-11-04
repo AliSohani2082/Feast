@@ -67,6 +67,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd client
+          ls -l .
           ${{ env.manager }} ${{ env.command }}
 
       - name: Build with Next.js
