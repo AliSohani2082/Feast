@@ -66,13 +66,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd client
-          ls -l .
+          cd ./client
+          ls -l ./client
           ${{ env.manager }} ${{ env.command }}
 
       - name: Build with Next.js
         run: |
-          cd client
+          cd ./client
           mkdir out
           ${{ env.manager }} next build
 
