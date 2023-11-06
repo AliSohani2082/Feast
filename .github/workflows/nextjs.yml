@@ -44,7 +44,7 @@ jobs:
           bun-version: latest
 
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v3
         with:
           static_site_generator: next
 
@@ -63,7 +63,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          ls -l .
           ${{ env.manager }} ${{ env.command }}
       - name: Build with Next.js
         run: |
@@ -71,12 +70,11 @@ jobs:
 
       - name: List files in the out folder
         run: |
-          ls -l out
+          ls -l ./out
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          name: out
           path: ./out
 
   deploy:
