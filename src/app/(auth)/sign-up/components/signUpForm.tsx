@@ -45,6 +45,7 @@ const SignUpForm = () => {
   // Handler
   const handleSignup = async (user: z.infer<typeof SignupValidation>) => {
     setIsCreatingAccount(true);
+    console.log('hhhh');
     try {
       const newUser = await createUserAccount(user);
       console.log('this is the new User: ', newUser);
