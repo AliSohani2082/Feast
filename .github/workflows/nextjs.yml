@@ -27,7 +27,7 @@ jobs:
       # Build job
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: ./
 
@@ -44,12 +44,12 @@ jobs:
           bun-version: latest
 
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v3
         with:
           static_site_generator: next
 
       - name: Restore cache
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
           path: |
@@ -74,11 +74,9 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
-        if: always()
         with:
           name: out
-          path: |
-            out
+          path: out
 
   deploy:
     environment:
