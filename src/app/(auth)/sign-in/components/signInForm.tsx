@@ -40,12 +40,14 @@ const SigninForm = () => {
 
   const handleSignin = async (user: z.infer<typeof SigninValidation>) => {
     const session = await signInAccount(user);
-    console.log(session);
     if (!session) {
-      toast({ title: 'Login failed. Please try again.' });
+      console.log('boo');
+      toast({ title: 'Login failed. Please try again..' });
 
       return;
     }
+    console.log('this is session: ');
+    console.log(session);
 
     const isLoggedIn = await checkAuthUser();
 

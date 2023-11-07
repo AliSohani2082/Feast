@@ -4,7 +4,7 @@ import { useState } from 'react';
 import * as z from 'zod';
 import { useForm } from 'react-hook-form';
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import {
@@ -20,16 +20,21 @@ import { Button } from '@/components/ui/button';
 import Loader from '@/components/shared/Loader';
 import { useToast } from '@/components/ui/use-toast';
 
-import { createUserAccount, signInAccount } from '@/lib/appwrite/api';
+// import { createUserAccount, signInAccount } from '@/lib/appwrite/api';
+import {
+  useCreateUserAccount,
+  useSignInAccount,
+} from '@/lib/react-query/queries';
 import { SignupValidation } from '@/lib/validation';
 import Logo from '@/components/shared/Logo';
 import { useUserContext } from '@/context/AuthContext';
 
 const SignUpForm = () => {
+  const router = useRouter();
   const { toast } = useToast();
   const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
-  const [isCreatingAccount, setIsCreatingAccount] = useState(false);
-  const [isSigningInUser, setIsSigningInUser] = useState(false);
+  // const [isCreatingAccount, setIsCreatingAccount] = useState(false);
+  // const [isSigningInUser, setIsSigningInUser] = useState(false);
 
   const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
@@ -42,40 +47,45 @@ const SignUpForm = () => {
     },
   });
 
+  // Queries
+  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } =
+    useCreateUserAccount();
+  const { mutateAsync: signInAccount, isPending: isSigningInUser } =
+    useSignInAccount();
+
   // Handler
   const handleSignup = async (user: z.infer<typeof SignupValidation>) => {
-    setIsCreatingAccount(true);
-    console.log('hhhh');
     try {
       const newUser = await createUserAccount(user);
-      console.log('this is the new User: ', newUser);
+
       if (!newUser) {
         toast({ title: 'Sign up failed. Please try again.' });
         return;
       }
-      setIsSigningInUser(true);
+
       const session = await signInAccount({
         email: user.email,
         password: user.password,
       });
+
       if (!session) {
         toast({ title: 'Something went wrong. Please login your new account' });
-        redirect('/sign-in');
+        router.push('/sign-in');
+
         return;
       }
+
       const isLoggedIn = await checkAuthUser();
-      setIsCreatingAccount(false);
-      setIsSigningInUser(false);
       if (isLoggedIn) {
         form.reset();
-        redirect('/');
+
+        router.push('/');
       } else {
         toast({ title: 'Login failed. Please try again.' });
+
         return;
       }
     } catch (error) {
-      setIsSigningInUser(false);
-      setIsCreatingAccount(false);
       console.log({ error });
     }
   };
@@ -166,19 +176,19 @@ const SignUpForm = () => {
             )}
           />
 
-          <Button type="submit" className="shad-button_primary">
-            Sign Up
-          </Button>
-
           {/* <Button type="submit" className="shad-button_primary">
+            Sign Up
+          </Button> */}
+
+          <Button type="submit" className="shad-button_primary">
             {isCreatingAccount || isSigningInUser || isUserLoading ? (
               <div className="flex-center gap-2">
                 <Loader /> Loading...
               </div>
             ) : (
-              "Sign Up"
+              'Sign Up'
             )}
-          </Button> */}
+          </Button>
 
           <p className="text-small-regular text-light-2 text-center mt-2">
             Already have an account?
