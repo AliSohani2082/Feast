@@ -26,8 +26,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <QueryProvider>
-          <main className="flex h-screen">{children}</main>
-          <Toaster />
+          <AuthProvider>
+            <main className="flex h-screen">{children}</main>
+            <Toaster />
+          </AuthProvider>
         </QueryProvider>
       </body>
     </html>

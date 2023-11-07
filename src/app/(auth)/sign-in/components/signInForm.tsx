@@ -3,7 +3,7 @@ import * as z from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { redirect } from 'next/navigation';
 
 import {
   Form,
@@ -25,7 +25,6 @@ import Logo from '@/components/shared/Logo';
 
 const SigninForm = () => {
   const { toast } = useToast();
-  // const router = useRouter();
   const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
 
   // Query
@@ -41,19 +40,21 @@ const SigninForm = () => {
 
   const handleSignin = async (user: z.infer<typeof SigninValidation>) => {
     const session = await signInAccount(user);
-    console.log(session);
     if (!session) {
-      toast({ title: 'Login failed. Please try again.' });
+      console.log('boo');
+      toast({ title: 'Login failed. Please try again..' });
 
       return;
     }
+    console.log('this is session: ');
+    console.log(session);
 
     const isLoggedIn = await checkAuthUser();
 
     if (isLoggedIn) {
       form.reset();
 
-      // router.push('/');
+      redirect('/');
     } else {
       toast({ title: 'Login failed. Please try again.' });
 

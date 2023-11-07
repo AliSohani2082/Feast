@@ -33,9 +33,7 @@ const LeftSidebar = () => {
   return (
     <nav className="leftsidebar">
       <div className="flex flex-col gap-11">
-        <Link href="/" className="flex gap-3 items-center">
-          <Logo size="md" />
-        </Link>
+        <Logo size="md" />
 
         {isLoading || !user.email ? (
           <div className="h-14">
