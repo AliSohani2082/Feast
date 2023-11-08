@@ -4,30 +4,31 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { icons, LogOut } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { INavLink } from '@/types';
 import { sidebarLinks } from '@/constants';
 import Loader from '@/components/shared/Loader';
 import { Button } from '@/components/ui/button';
-// import { useSignOutAccount } from '@/lib/react-query/queries'
+import { useSignOutAccount } from '@/lib/react-query/queries';
 import { useUserContext, INITIAL_USER } from '@/context/AuthContext';
 import Logo from '@/components/shared/Logo';
 
 const LeftSidebar = () => {
+  const router = useRouter();
   const pathname = usePathname();
   const { user, setUser, setIsAuthenticated, isLoading } = useUserContext();
 
-  // const { mutate: signOut } = useSignOutAccount()
+  const { mutate: signOut } = useSignOutAccount();
 
   const handleSignOut = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
     console.log('wana signout');
-    // signOut()
-    // setIsAuthenticated(false)
-    // setUser(INITIAL_USER)
-    // redirect('/sign-in')
+    signOut();
+    setIsAuthenticated(false);
+    setUser(INITIAL_USER);
+    router.push('/sign-in');
   };
 
   return (
