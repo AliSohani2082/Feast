@@ -5,7 +5,7 @@
   "scripts": {
     "fastapi-dev": "cd src && pip3 install -r ../requirements.txt && python3 -m uvicorn api.index:app --reload",
     "next-dev": "next dev",
-    "dev": "concurrently \"npm run next-dev\" \"npm run fastapi-dev\"",
+    "dev": "concurrently \"bun run next-dev\" \"bun run fastapi-dev\"",
     "build": "bun run prettier && next build",
     "start": "bun run prettier && next start",
     "lint": "next lint",
