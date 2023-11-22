@@ -9,13 +9,13 @@ conn = psycopg2.connect(database="Feast",
 cursor = conn.cursor()
 
 # this function return all users
-def select():
+def All_user():
     cursor.execute('SELECT * FROM "User"')
     return cursor.fetchall()
 
-# this function register user if the username does not exist
+# this function register user if the username does not exist return the message if the operation was successful .
 def Register_user(F, E, P, U, PI, PN):
-    for i in select():
+    for i in All_user():
         if i[4] == U:
             return "username in available, please Change it"
 
@@ -31,8 +31,11 @@ def Edit_profile(ID,F, E, P, U, PI, PN):
 
 # this function return the specific user
 def Specific_user(U):
-    cursor.execute(f"SELECT * FROM \"User\" WHERE \"username\" = '{U}'")
-    return cursor.fetchall()
+    for i in All_user():
+        if i[4] == U:
+            cursor.execute(f"SELECT * FROM \"User\" WHERE \"username\" = '{U}'")
+            return cursor.fetchall()
+    return "username does not exist"
 
 # this function return all posts
 def All_post():
@@ -44,12 +47,22 @@ def Specific_post(UID,PID):
     cursor.execute(f"SELECT * FROM \"Post\" WHERE  \"userid\" = {int(UID)} AND \"ID\" = {int(PID)}")
     return cursor.fetchall()
 
+#this function return all user post
+def All_user_post(UID):
+    cursor.execute(f"SELECT * FROM \"Post\" WHERE \"ID\" = {int(UID)}")
+    return cursor.fetchall()
+
 # this function add the post
 def Add_post(UID, PID, TITLE, DESCRIPTION, IMAGE, LIKE_COUTN,AMOUNT,INGREDIENTID):
     cursor.execute(f"INSERT INTO \"Post\"(userid,title,description,image,like_count) VALUES({int(UID)},'{TITLE}','{DESCRIPTION}','{IMAGE}',{int(LIKE_COUTN)});"
                    f"INSERT INTO \"Post_ingredient\"(postid,amount,ingredientid) VALUES({int(PID)},{int(AMOUNT)},{INGREDIENTID})")
     conn.commit()
     return "The post was published successfully"
+
+#this function delete specifice post
+def Delete_post(UID,PID):
+    cursor.execute(f"DELETE FROM \"Post\" WHERE \"userid\" = {int(UID)} AND \"ID\" = {int(UID)}")
+    return "Post successfully removed"
 
 # def Add_ingredient():
 #     cursor.execute(f"INSERT INTO \"ingredient\"(name,type,price_per_unit,image,unit_type) VALUES()")
