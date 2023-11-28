@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fade589-f361-4e85-8cd0-b633a67f978a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/Queries/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/Queries/post_Query.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/Queries/user_Query.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/Router/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/Router/post_endpoint.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/Router/user_endpoint.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/index.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/model/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/model/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/test_main.http" afterDir="false" />
-    </list>
+    <list default="true" id="3fade589-f361-4e85-8cd0-b633a67f978a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "",
+    "git-widget-placeholder": "new__branch",
     "last_opened_file_path": "C:/Users/Alireza/PycharmProjects/Feast/src/api/index.py",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -120,7 +106,7 @@
       <workItem from="1701082701031" duration="16000" />
       <workItem from="1701088582153" duration="174000" />
       <workItem from="1701189572347" duration="3307000" />
-      <workItem from="1701192961545" duration="890000" />
+      <workItem from="1701192961545" duration="1272000" />
     </task>
     <servers />
   </component>
