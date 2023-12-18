@@ -1,0 +1,32 @@
+[
+  {
+    "postid": "",
+    "amount": "200 grams",
+    "instruction": "Boil water and cook pasta according to package instructions.",
+    "step_number": 1
+  },
+  {
+    "postid": "",
+    "amount": "400 grams",
+    "instruction": "Season chicken breast with salt and pepper. Cook on a grill or stovetop until fully cooked.",
+    "step_number": 1
+  },
+  {
+    "postid": "",
+    "amount": "2 cups",
+    "instruction": "Chop tomatoes and garlic. Sauté in olive oil until soft. Add spinach and cook until wilted.",
+    "step_number": 1
+  },
+  {
+    "postid": "",
+    "amount": "1 cup",
+    "instruction": "Cook quinoa according to package instructions.",
+    "step_number": 1
+  },
+  {
+    "postid": "",
+    "amount": "300 grams",
+    "instruction": "Mash black beans and mix with cooked quinoa. Form into patties and cook until golden brown.",
+    "step_number": 1
+  }
+]
