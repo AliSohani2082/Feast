@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="45290ac8-d073-4f93-b4cf-ecb31776e98a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Feast" beforeDir="false" afterPath="$PROJECT_DIR$/Feast" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Feast/api/Queries/Account_Query.py" beforeDir="false" afterPath="$PROJECT_DIR$/Feast/api/Queries/Account_Query.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Feast/api/Queries/comment_Query.py" beforeDir="false" afterPath="$PROJECT_DIR$/Feast/api/Queries/comment_Query.py" afterDir="false" />
@@ -28,6 +31,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Feast" />
   </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2acY1alcIx2fYsEIF1qKkOB0Ka8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -38,24 +51,30 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Users/Click/Desktop/Feast&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/Feast&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Users\Click\Desktop\Feast\Feast\.github" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="index" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="index" type="PythonConfigurationType" factoryName="Python" singleton="true" nameIsGenerated="true">
       <module name="Feast" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Click\AppData\Local\Programs\Python\Python39\python.exe" />
-      <option name="SDK_NAME" value="Python 3.9" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Feast/api" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -78,6 +97,12 @@
       <option name="presentableId" value="Default" />
       <updated>1704619121057</updated>
       <workItem from="1704619127035" duration="273000" />
+      <workItem from="1704619401929" duration="654000" />
+      <workItem from="1704620082203" duration="26000" />
+      <workItem from="1704620332397" duration="752000" />
+      <workItem from="1704621237451" duration="31000" />
+      <workItem from="1704621600036" duration="3224000" />
+      <workItem from="1704628052515" duration="170000" />
     </task>
     <servers />
   </component>
@@ -85,6 +110,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Feast$index.coverage" NAME="index Coverage Results" MODIFIED="1704619359973" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Feast/api" />
+    <SUITE FILE_PATH="coverage/Feast$index.coverage" NAME="index Coverage Results" MODIFIED="1704628222960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Feast/api" />
   </component>
 </project>
