@@ -35,6 +35,8 @@ class post_ingredient(BaseModel):
     postid: int
     ingredient: list[Post_ingredient]
 
+
+
 class Postdetails(BaseModel):
     userid : int
     title : str

@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from src.api.Queries.Account_Query import *
-from src.api.model.models import *
+from api.Queries.Account_Query import *
+from api.model.models import *
 import re
 
 router = APIRouter()

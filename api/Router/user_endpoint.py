@@ -1,13 +1,14 @@
 import json
 import re
 from fastapi import APIRouter , Response
+from starlette.responses import JSONResponse
 
-from src.api.Queries.user_Query import *
-from src.api.model.models import *
+from api.Queries.user_Query import *
+from api.model.models import *
 
 router = APIRouter()
 
-
+# http://localhost:8000/register_user
 # This function sends all users to the client
 @router.get('/user')
 async def all_user():

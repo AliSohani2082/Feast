@@ -1,8 +1,10 @@
 from fastapi import APIRouter
 import re
 
-from src.api.Queries.post_Query import *
-from src.api.model.models import *
+from starlette.responses import JSONResponse
+
+from api.Queries.post_Query import *
+from api.model.models import *
 
 
 router = APIRouter()

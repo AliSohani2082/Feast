@@ -1,15 +1,8 @@
-import psycopg2
+from api.functional_function.function import conn,cursor
 
-conn = psycopg2.connect(database="Feast",
-                        host="localhost",
-                        user="postgres",
-                        password="#Alireza@tampo7",
-                        port="5432")
-
-cursor = conn.cursor()
 
 def All_ingredient(PID):
-    cursor.execute(f"SELECT * FROM \"Post_ingredient\" WHERE \"postid\" = {PID}")
+    cursor.execute(f"SELECT \"Post_ingredient\".*,\"ingredient\".\"name\" FROM \"Post_ingredient\" INNER JOIN  \"ingredient\" ON \"Post_ingredient\".\"ingredientid\" = \"ingredient\".\"ID\" WHERE \"postid\" = {PID}")
     return {"status_code": 202, "content":cursor.fetchall()}
 
 
@@ -22,18 +15,17 @@ def Add_ingredient(item):
     return {"status_code":202 ,"content":"ingredient added successfully"}
 
 
-def Edit_ingredient(item):
-    postid = item.postid
-    for i in item.ingredient:
-        cursor.execute(f"UPDATE \"Post_ingredient\" SET \"amount\" = '{i.amount}' , \"ingredientid\" = {i.ingredientid}")
-
-    conn.commit()
+# def Edit_ingredient(item):
+#     postid = item.postid
+#     for i in item.ingredient:
+#         cursor.execute(f"UPDATE \"Post_ingredient\" SET \"amount\" = '{i.amount}' WHERE \"postid\"")
+#
+#     conn.commit()
     return {"status_code":202 , "content":"ingredients updated successfully"}
 
-def Delete_ingredient(item):
-    postid = i.postid
-    for i in item.ingredient:
-        cursor.execute(f"DELETE FROM \"Post_ingredient\" WHERE \"postid\" = {postid} AND \"ingredient\" = {i.ingredientid}")
+def Delete_ingredient(PID,IID):
+
+    cursor.execute(f"DELETE FROM \"Post_ingredient\" WHERE \"postid\" = {PID} AND \"ingredientid\" = {IID}")
 
     conn.commit()
     return {"status_code":202, "content":"ingredient deleted successfully"}

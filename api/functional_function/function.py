@@ -1,3 +1,6 @@
+import psycopg2
+
+
 def ingredient_to_json(ingredient):
     return {
         "name": ingredient.name,
@@ -6,9 +9,11 @@ def ingredient_to_json(ingredient):
         "image": ingredient.image,
         "unit_type": ingredient.unit_type
     }
-# def step_to_json(step):
-#     return{
-#         "amount":step.amount,
-#         "instructin":step.instruction,
-#         "step_number":step.number
-#     }
+
+conn = psycopg2.connect(database="Feast",
+                        host="localhost",
+                        user="postgres",
+                        password="0322262",
+                        port="5432")
+
+cursor = conn.cursor()

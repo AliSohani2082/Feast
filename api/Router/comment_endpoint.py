@@ -1,7 +1,8 @@
 from fastapi import APIRouter
-from src.api.Queries.comment_Query import *
-from src.api.model.models import *
-import re
+from starlette.responses import JSONResponse
+
+from api.Queries.comment_Query import *
+from api.model.models import *
 
 router = APIRouter()
 
@@ -48,7 +49,7 @@ async def like_comment(ID):
 
 
 # I will add this function to the likes of a specific comment
-@router.patch('dislike_comment/{ID}')
+@router.patch('/dislike_comment/{ID}')
 async def dislike_comment(ID):
     result = Reaction(ID,mode='dislike')
     return JSONResponse(status_code=result["status_code"], content=result["content"])

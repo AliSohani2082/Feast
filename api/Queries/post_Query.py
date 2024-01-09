@@ -1,13 +1,5 @@
-import psycopg2
-from starlette.responses import JSONResponse
+from api.functional_function.function import conn,cursor
 
-conn = psycopg2.connect(database="Feast",
-                        host="localhost",
-                        user="postgres",
-                        password="#Alireza@tampo7",
-                        port="5432")
-
-cursor = conn.cursor()
 
 # this function return all posts
 def All_post():
@@ -52,7 +44,7 @@ def Add_post(userid,TITLE, DESCRIPTION, IMAGE,INGREDIENT,STEPS):
     return {"status_code":202, "content":"The post was published successfully"}
 
 
-# this function delete specifice post
+# this function delete specific post
 def Delete_post(PID):
     cursor.execute(f"DELETE FROM \"Post\" WHERE \"ID\" = {int(PID)}")
     conn.commit()

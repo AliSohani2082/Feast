@@ -1,19 +1,7 @@
-
-import psycopg2
-from starlette.responses import JSONResponse
 import hashlib
-from dotenv import load_dotenv
+from api.functional_function.function import conn,cursor
 
-# Load environment variables from the .env file
-load_dotenv()
-import os
 
-conn = psycopg2.connect(database=os.getenv("DATABASE"),
-                        host=os.getenv("DATABASE_HOST"),
-                        user=os.getenv("DATABASE_USERNAME"),
-                        password=os.getenv("DATABASE_PASSWORD"),
-                        )
-cursor = conn.cursor()
 
 # this function return all users
 def All_user():

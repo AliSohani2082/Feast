@@ -1,6 +1,8 @@
 from fastapi import APIRouter
-from src.api.Queries.step_Query import *
-from src.api.model.models import *
+from starlette.responses import JSONResponse
+
+from api.Queries.step_Query import *
+from api.model.models import *
 import re
 
 router = APIRouter()
@@ -22,7 +24,7 @@ async def all_post_steps(PID):
 # this function adds a step
 @router.post('/add_step')
 async def add_step(item: Step_list):
-    result = Add_step(Step_list)
+    result = Add_step(item)
     return JSONResponse(status_code=result["status_code"], content=result["content"])
 
 
@@ -34,7 +36,7 @@ async def edit_step(item: Step_list):
 
 
 # this function delete a specific step
-@router.delete('/delete_post/{PID}/{SN}')
+@router.delete('/delete_step/{PID}/{SN}')
 async def delete_step(PID,SN):
     result = Delete_step(PID,SN)
     return JSONResponse(status_code=result["status_code"], content=result["content"])

@@ -1,17 +1,7 @@
-import psycopg2
-from starlette.responses import JSONResponse
 import re
 
-from src.api.functional_function.function import ingredient_to_json
+from api.functional_function.function import *
 
-
-conn = psycopg2.connect(database="Feast",
-                        host="localhost",
-                        user="postgres",
-                        password="#Alireza@tampo7",
-                        port="5432")
-
-cursor = conn.cursor()
 
 
 def All_ingredient():
