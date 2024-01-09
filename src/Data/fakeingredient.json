@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Chia Seeds",
+    "type": "Seeds",
+    "price_per_unit": "4.0",
+    "image": "https://example.com/chia_seeds.jpg",
+    "unit_type": "kg"
+  },
+  {
+    "name": "Green Beans",
+    "type": "Vegetable",
+    "price_per_unit": "1.2",
+    "image": "https://example.com/green_beans.jpg",
+    "unit_type": "kg"
+  },
+  {
+    "name": "Peanuts",
+    "type": "Nuts",
+    "price_per_unit": "3.5",
+    "image": "https://example.com/peanuts.jpg",
+    "unit_type": "kg"
+  },
+  {
+    "name": "Lemon",
+    "type": "Fruit",
+    "price_per_unit": "0.8",
+    "image": "https://example.com/lemon.jpg",
+    "unit_type": "each"
+  },
+  {
+    "name": "Whole Wheat Bread",
+    "type": "Grain",
+    "price_per_unit": "2.8",
+    "image": "https://example.com/whole_wheat_bread.jpg",
+    "unit_type": "loaf"
+  },
+  {
+    "name": "Cottage Cheese",
+    "type": "Dairy",
+    "price_per_unit": "2.8",
+    "image": "https://example.com/cottage_cheese.jpg",
+    "unit_type": "kg"
+  },
+  {
+    "name": "Cherries",
+    "type": "Fruit",
+    "price_per_unit": "2.5",
+    "image": "https://example.com/cherries.jpg",
+    "unit_type": "kg"
+  },
+  {
+    "name": "Walnuts",
+    "type": "Nuts",
+    "price_per_unit": "6.0",
+    "image": "https://example.com/walnuts.jpg",
+    "unit_type": "kg"
+  },
+  {
+    "name": "Whole Milk",
+    "type": "Dairy",
+    "price_per_unit": "1.5",
+    "image": "https://example.com/whole_milk.jpg",
+    "unit_type": "liter"
+  },
+  {
+    "name": "Tuna",
+    "type": "Seafood",
+    "price_per_unit": "7.0",
+    "image": "https://example.com/tuna.jpg",
+    "unit_type": "can"
+  },
+  {
+    "name": "Cauliflower",
+    "type": "Vegetable",
+    "price_per_unit": "2.0",
+    "image": "https://example.com/cauliflower.jpg",
+    "unit_type": "each"
+  },
+  {
+    "name": "Dark Chocolate",
+    "type": "Sweets",
+    "price_per_unit": "5.0",
+    "image": "https://example.com/dark_chocolate.jpg",
+    "unit_type": "bar"
+  },
+  {
+    "name": "Brussels Sprouts",
+    "type": "Vegetable",
+    "price_per_unit": "2.5",
+    "image": "https://example.com/brussels_sprouts.jpg",
+    "unit_type": "bunch"
+  },
+  {
+    "name": "Turkey Sausage",
+    "type": "Meat",
+    "price_per_unit": "6.0",
+    "image": "https://example.com/turkey_sausage.jpg",
+    "unit_type": "pack"
+  },
+  {
+    "name": "Pepper",
+    "type": "Vegetable",
+    "price_per_unit": "1.0",
+    "image": "https://example.com/pepper.jpg",
+    "unit_type": "each"
+  },
+  {
+    "name": "Pine Nuts",
+    "type": "Nuts",
+    "price_per_unit": "8.0",
+    "image": "https://example.com/pine_nuts.jpg",
+    "unit_type": "kg"
+  },
+  {
+    "name": "Raspberries",
+    "type": "Fruit",
+    "price_per_unit": "3.0",
+    "image": "https://example.com/raspberries.jpg",
+    "unit_type": "pint"
+  },
+  {
+    "name": "Flaxseeds",
+    "type": "Seeds",
+    "price_per_unit": "3.5",
+    "image": "https://example.com/flaxseeds.jpg",
+    "unit_type": "kg"
+  },
+  {
+    "name": "Greek Salad",
+    "type": "Salad",
+    "price_per_unit": "4.0",
+    "image": "https://example.com/greek_salad.jpg",
+    "unit_type": "each"
+  }
+]
