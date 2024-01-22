@@ -1,0 +1,2539 @@
+[
+  {
+    "userid": 1,
+    "title": "Chia Seeds Pudding",
+    "description": "Delicious and healthy chia seeds pudding.",
+    "image": "https://example.com/chia_seeds.jpg",
+    "ingredient": [
+        {
+            "amount": 300,
+            "ingredientid": 1
+        },
+        {
+            "amount": 500,
+            "ingredientid": 6
+        },
+        {
+            "amount": 2,
+            "ingredientid": 9
+        }
+    ],
+    "step": [
+        {
+            "amount": "1 cup",
+            "instruction": "Mix chia seeds with milk and let it soak for 2 hours.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Add",
+            "instruction": "Stir in cottage cheese and refrigerate overnight.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Top with",
+            "instruction": "Top with cherries before serving.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+{
+    "userid": 2,
+    "title": "Green Beans Salad",
+    "description": "Fresh and crunchy green beans salad.",
+    "image": "https://example.com/green_beans.jpg",
+    "ingredient": [
+        {
+            "amount": 400,
+            "ingredientid": 2
+        },
+        {
+            "amount": 1,
+            "ingredientid": 15
+        },
+        {
+            "amount": 200,
+            "ingredientid": 39
+        }
+    ],
+    "step": [
+        {
+            "amount": "Steam",
+            "instruction": "Steam green beans until tender.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Combine",
+            "instruction": "Combine with lemon and dill.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve chilled.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+  {
+    "userid": 3,
+    "title": "Peanut Butter Smoothie",
+    "description": "A creamy and nutty peanut butter smoothie.",
+    "image": "https://example.com/peanuts.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 3
+        },
+        {
+            "amount": 1,
+            "ingredientid": 6
+        },
+        {
+            "amount": 250,
+            "ingredientid": 9
+        }
+    ],
+    "step": [
+        {
+            "amount": "Blend",
+            "instruction": "Blend peanuts, cottage cheese, and whole milk until smooth.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Add",
+            "instruction": "Add chia seeds and blend again.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Garnish",
+            "instruction": "Garnish with sliced banana before serving.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+{
+    "userid": 4,
+    "title": "Refreshing Lemonade",
+    "description": "Cool down with a glass of homemade lemonade.",
+    "image": "https://example.com/lemon.jpg",
+    "ingredient": [
+        {
+            "amount": 4,
+            "ingredientid": 4
+        },
+        {
+            "amount": 2,
+            "ingredientid": 9
+        },
+        {
+            "amount": 1,
+            "ingredientid": 20
+        }
+    ],
+    "step": [
+        {
+            "amount": "Squeeze",
+            "instruction": "Squeeze lemons to extract juice.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Mix",
+            "instruction": "Mix with water and sweeten to taste.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve over ice cubes.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 5,
+    "title": "Avocado Toast",
+    "description": "A simple and nutritious avocado toast.",
+    "image": "https://example.com/avocado_toast.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 5
+        },
+        {
+            "amount": 2,
+            "ingredientid": 11
+        },
+        {
+            "amount": 150,
+            "ingredientid": 36
+        }
+    ],
+    "step": [
+        {
+            "amount": "Toast",
+            "instruction": "Toast whole wheat bread slices.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Spread",
+            "instruction": "Spread mashed avocado on the toast.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Season",
+            "instruction": "Season with salt and pepper to taste.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 6,
+    "title": "Greek Yogurt Parfait",
+    "description": "A layered dessert with Greek yogurt and berries.",
+    "image": "https://example.com/greek_yogurt_parfait.jpg",
+    "ingredient": [
+        {
+            "amount": 300,
+            "ingredientid": 6
+        },
+        {
+            "amount": 200,
+            "ingredientid": 17
+        },
+        {
+            "amount": 100,
+            "ingredientid": 33
+        }
+    ],
+    "step": [
+        {
+            "amount": "Layer",
+            "instruction": "Layer Greek yogurt, raspberries, and granola.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Repeat",
+            "instruction": "Repeat layers until the glass is filled.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Top",
+            "instruction": "Top with a few whole raspberries.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 7,
+    "title": "Walnut Salad",
+    "description": "A nutritious salad with walnuts and mixed greens.",
+    "image": "https://example.com/walnut_salad.jpg",
+    "ingredient": [
+        {
+            "amount": 150,
+            "ingredientid": 8
+        },
+        {
+            "amount": 100,
+            "ingredientid": 15
+        },
+        {
+            "amount": 1,
+            "ingredientid": 41
+        }
+    ],
+    "step": [
+        {
+            "amount": "Combine",
+            "instruction": "Combine walnuts, mixed greens, and coriander.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Drizzle",
+            "instruction": "Drizzle with olive oil and balsamic vinegar.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Toss",
+            "instruction": "Toss gently and serve.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 8,
+    "title": "Tuna Sandwich",
+    "description": "A classic tuna sandwich for a quick and tasty meal.",
+    "image": "https://example.com/tuna_sandwich.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 10
+        },
+        {
+            "amount": 2,
+            "ingredientid": 11
+        },
+        {
+            "amount": 4,
+            "ingredientid": 5
+        }
+    ],
+    "step": [
+        {
+            "amount": "Mix",
+            "instruction": "Mix tuna with mayonnaise and chopped celery.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Spread",
+            "instruction": "Spread the tuna mixture on whole wheat bread slices.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Assemble",
+            "instruction": "Assemble sandwiches with lettuce and tomato slices.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 9,
+    "title": "Dark Chocolate Mousse",
+    "description": "Indulge in the richness of dark chocolate mousse.",
+    "image": "https://example.com/dark_chocolate_mousse.jpg",
+    "ingredient": [
+        {
+            "amount": 200,
+            "ingredientid": 12
+        },
+        {
+            "amount": 100,
+            "ingredientid": 6
+        },
+        {
+            "amount": 50,
+            "ingredientid": 29
+        }
+    ],
+    "step": [
+        {
+            "amount": "Melt",
+            "instruction": "Melt dark chocolate and let it cool slightly.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Whip",
+            "instruction": "Whip cottage cheese until fluffy.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Fold",
+            "instruction": "Fold melted chocolate into the whipped cottage cheese.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 10,
+    "title": "Mixed Berry Smoothie Bowl",
+    "description": "A vibrant and healthy smoothie bowl with mixed berries.",
+    "image": "https://example.com/berry_smoothie_bowl.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 17
+        },
+        {
+            "amount": 100,
+            "ingredientid": 32
+        },
+        {
+            "amount": 50,
+            "ingredientid": 3
+        }
+    ],
+    "step": [
+        {
+            "amount": "Blend",
+            "instruction": "Blend berries, quinoa, and peanuts until smooth.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Pour",
+            "instruction": "Pour the smoothie into a bowl.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Top",
+            "instruction": "Top with additional berries and flaxseeds.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 7,
+    "title": "Quinoa Salad",
+    "description": "A wholesome salad featuring quinoa and fresh vegetables.",
+    "image": "https://example.com/quinoa_salad.jpg",
+    "ingredient": [
+        {
+            "amount": 200,
+            "ingredientid": 22
+        },
+        {
+            "amount": 150,
+            "ingredientid": 46
+        },
+        {
+            "amount": 100,
+            "ingredientid": 18
+        }
+    ],
+    "step": [
+        {
+            "amount": "Cook",
+            "instruction": "Cook quinoa according to package instructions.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Combine",
+            "instruction": "Combine quinoa, cucumber, and flaxseeds in a bowl.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Dress",
+            "instruction": "Dress with olive oil and lemon juice.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 8,
+    "title": "Blueberry Pancakes",
+    "description": "Fluffy pancakes bursting with fresh blueberries.",
+    "image": "https://example.com/blueberry_pancakes.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 17
+        },
+        {
+            "amount": 1,
+            "ingredientid": 5
+        },
+        {
+            "amount": 200,
+            "ingredientid": 26
+        }
+    ],
+    "step": [
+        {
+            "amount": "Mix",
+            "instruction": "Mix flour, whole milk, and eggs until smooth.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Fold",
+            "instruction": "Fold in blueberries gently.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Cook",
+            "instruction": "Cook spoonfuls of batter on a griddle.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 9,
+    "title": "Mango Salsa",
+    "description": "A vibrant salsa with ripe mango and fresh herbs.",
+    "image": "https://example.com/mango_salsa.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 37
+        },
+        {
+            "amount": 1,
+            "ingredientid": 28
+        },
+        {
+            "amount": 3,
+            "ingredientid": 48
+        }
+    ],
+    "step": [
+        {
+            "amount": "Dice",
+            "instruction": "Dice mango, garlic, and red bell pepper.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Combine",
+            "instruction": "Combine ingredients in a bowl.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Chill",
+            "instruction": "Chill in the refrigerator before serving.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 10,
+    "title": "Spinach and Feta Stuffed Chicken",
+    "description": "Juicy chicken breasts stuffed with spinach and feta.",
+    "image": "https://example.com/spinach_feta_chicken.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 50
+        },
+        {
+            "amount": 150,
+            "ingredientid": 30
+        },
+        {
+            "amount": 100,
+            "ingredientid": 48
+        }
+    ],
+    "step": [
+        {
+            "amount": "Prep",
+            "instruction": "Prep chicken breasts by creating a pocket for stuffing.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Stuff",
+            "instruction": "Stuff with a mixture of spinach and feta.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Bake",
+            "instruction": "Bake until chicken is cooked through.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 11,
+    "title": "Caprese Salad",
+    "description": "A classic Italian salad with tomatoes, mozzarella, and basil.",
+    "image": "https://example.com/caprese_salad.jpg",
+    "ingredient": [
+        {
+            "amount": 4,
+            "ingredientid": 15
+        },
+        {
+            "amount": 200,
+            "ingredientid": 19
+        },
+        {
+            "amount": 1,
+            "ingredientid": 11
+        }
+    ],
+    "step": [
+        {
+            "amount": "Slice",
+            "instruction": "Slice tomatoes and mozzarella cheese.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Arrange",
+            "instruction": "Arrange in layers with fresh basil leaves.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Drizzle",
+            "instruction": "Drizzle with balsamic glaze and olive oil.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 12,
+    "title": "Chicken Stir-Fry",
+    "description": "A quick and flavorful chicken stir-fry with colorful vegetables.",
+    "image": "https://example.com/chicken_stir_fry.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 50
+        },
+        {
+            "amount": 150,
+            "ingredientid": 15
+        },
+        {
+            "amount": 1,
+            "ingredientid": 14
+        }
+    ],
+    "step": [
+        {
+            "amount": "Sauté",
+            "instruction": "Sauté chicken until browned and cooked through.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Add",
+            "instruction": "Add sliced bell peppers and broccoli.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Stir-Fry",
+            "instruction": "Stir-fry until vegetables are tender-crisp.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 13,
+    "title": "Raspberry Cheesecake",
+    "description": "A decadent cheesecake topped with fresh raspberries.",
+    "image": "https://example.com/raspberry_cheesecake.jpg",
+    "ingredient": [
+        {
+            "amount": 250,
+            "ingredientid": 6
+        },
+        {
+            "amount": 200,
+            "ingredientid": 17
+        },
+        {
+            "amount": 1,
+            "ingredientid": 33
+        }
+    ],
+    "step": [
+        {
+            "amount": "Mix",
+            "instruction": "Mix cream cheese, sugar, and vanilla until smooth.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Pour",
+            "instruction": "Pour the mixture onto a graham cracker crust.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Top",
+            "instruction": "Top with fresh raspberries before chilling.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 14,
+    "title": "Shrimp Pasta",
+    "description": "Delicious pasta with garlic butter shrimp and cherry tomatoes.",
+    "image": "https://example.com/shrimp_pasta.jpg",
+    "ingredient": [
+        {
+            "amount": 200,
+            "ingredientid": 7
+        },
+        {
+            "amount": 150,
+            "ingredientid": 48
+        },
+        {
+            "amount": 1,
+            "ingredientid": 15
+        }
+    ],
+    "step": [
+        {
+            "amount": "Cook",
+            "instruction": "Cook pasta according to package instructions.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Sauté",
+            "instruction": "Sauté shrimp and cherry tomatoes in garlic butter.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Combine",
+            "instruction": "Combine with cooked pasta and fresh herbs.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 15,
+    "title": "Mango Smoothie",
+    "description": "A tropical mango smoothie for a refreshing treat.",
+    "image": "https://example.com/mango_smoothie.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 37
+        },
+        {
+            "amount": 150,
+            "ingredientid": 9
+        },
+        {
+            "amount": 100,
+            "ingredientid": 33
+        }
+    ],
+    "step": [
+        {
+            "amount": "Blend",
+            "instruction": "Blend mango, yogurt, and ice cubes until smooth.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Pour",
+            "instruction": "Pour into a glass and garnish with mint leaves.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Enjoy",
+            "instruction": "Enjoy the tropical goodness.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 16,
+    "title": "Teriyaki Salmon",
+    "description": "Grilled teriyaki-glazed salmon fillets with sesame seeds.",
+    "image": "https://example.com/teriyaki_salmon.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 14
+        },
+        {
+            "amount": 150,
+            "ingredientid": 45
+        },
+        {
+            "amount": 1,
+            "ingredientid": 13
+        }
+    ],
+    "step": [
+        {
+            "amount": "Marinate",
+            "instruction": "Marinate salmon fillets in teriyaki sauce.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Grill",
+            "instruction": "Grill until salmon is cooked to perfection.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Sprinkle",
+            "instruction": "Sprinkle with sesame seeds before serving.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 17,
+    "title": "Avocado Toast",
+    "description": "A simple and healthy breakfast with mashed avocado on whole wheat toast.",
+    "image": "https://example.com/avocado_toast.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 11
+        },
+        {
+            "amount": 1,
+            "ingredientid": 9
+        },
+        {
+            "amount": 1,
+            "ingredientid": 5
+        }
+    ],
+    "step": [
+        {
+            "amount": "Toast",
+            "instruction": "Toast slices of whole wheat bread.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Mash",
+            "instruction": "Mash ripe avocado and spread on toast.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Season",
+            "instruction": "Season with salt, pepper, and a drizzle of olive oil.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 18,
+    "title": "Lentil Soup",
+    "description": "A hearty and nutritious lentil soup with vegetables.",
+    "image": "https://example.com/lentil_soup.jpg",
+    "ingredient": [
+        {
+            "amount": 200,
+            "ingredientid": 13
+        },
+        {
+            "amount": 150,
+            "ingredientid": 15
+        },
+        {
+            "amount": 1,
+            "ingredientid": 3
+        }
+    ],
+    "step": [
+        {
+            "amount": "Cook",
+            "instruction": "Cook lentils with diced vegetables in a pot.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Blend",
+            "instruction": "Blend a portion of soup for a creamy texture.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve hot with a sprinkle of fresh herbs.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 19,
+    "title": "Grilled Veggie Skewers",
+    "description": "Colorful skewers loaded with grilled vegetables and a balsamic glaze.",
+    "image": "https://example.com/veggie_skewers.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 15
+        },
+        {
+            "amount": 1,
+            "ingredientid": 46
+        },
+        {
+            "amount": 1,
+            "ingredientid": 11
+        }
+    ],
+    "step": [
+        {
+            "amount": "Prepare",
+            "instruction": "Prepare skewers with a mix of vegetables.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Grill",
+            "instruction": "Grill until vegetables are charred and tender.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Glaze",
+            "instruction": "Brush with balsamic glaze before serving.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+{
+    "userid": 20,
+    "title": "Chocolate Banana Smoothie Bowl",
+    "description": "A delicious and energizing smoothie bowl with chocolate and banana.",
+    "image": "https://example.com/choco_banana_smoothie_bowl.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 9
+        },
+        {
+            "amount": 1,
+            "ingredientid": 6
+        },
+        {
+            "amount": 50,
+            "ingredientid": 12
+        }
+    ],
+    "step": [
+        {
+            "amount": "Blend",
+            "instruction": "Blend banana, yogurt, and cocoa powder until smooth.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Pour",
+            "instruction": "Pour into a bowl and top with granola and berries.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Enjoy",
+            "instruction": "Enjoy a delightful and healthy bowl.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 21,
+    "title": "Egg Salad Sandwich",
+    "description": "A classic egg salad sandwich with fresh lettuce on whole grain bread.",
+    "image": "https://example.com/egg_salad_sandwich.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 14
+        },
+        {
+            "amount": 1,
+            "ingredientid": 11
+        },
+        {
+            "amount": 2,
+            "ingredientid": 5
+        }
+    ],
+    "step": [
+        {
+            "amount": "Boil",
+            "instruction": "Boil eggs until hard-cooked, then chop.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Mix",
+            "instruction": "Mix chopped eggs with mayo, mustard, and seasoning.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Assemble",
+            "instruction": "Assemble the sandwich with lettuce on whole grain bread.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 22,
+    "title": "Vegan Buddha Bowl",
+    "description": "A nourishing bowl with quinoa, roasted vegetables, and avocado.",
+    "image": "https://example.com/vegan_buddha_bowl.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 22
+        },
+        {
+            "amount": 1,
+            "ingredientid": 14
+        },
+        {
+            "amount": 1,
+            "ingredientid": 17
+        }
+    ],
+    "step": [
+        {
+            "amount": "Cook",
+            "instruction": "Cook quinoa and arrange in a bowl.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Roast",
+            "instruction": "Roast a variety of vegetables and add to the bowl.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Top",
+            "instruction": "Top with sliced avocado and drizzle with tahini.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 23,
+    "title": "Chicken Caesar Salad",
+    "description": "A classic Caesar salad with grilled chicken, croutons, and Parmesan.",
+    "image": "https://example.com/chicken_caesar_salad.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 11
+        },
+        {
+            "amount": 150,
+            "ingredientid": 14
+        },
+        {
+            "amount": 1,
+            "ingredientid": 19
+        }
+    ],
+    "step": [
+        {
+            "amount": "Grill",
+            "instruction": "Grill chicken until fully cooked.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Toss",
+            "instruction": "Toss together lettuce, croutons, and Caesar dressing.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Top",
+            "instruction": "Top with sliced grilled chicken and shaved Parmesan.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 24,
+    "title": "Quinoa Salad",
+    "description": "A refreshing salad with quinoa, cucumber, and feta cheese.",
+    "image": "https://example.com/quinoa_salad.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 22
+        },
+        {
+            "amount": 1,
+            "ingredientid": 45
+        },
+        {
+            "amount": 100,
+            "ingredientid": 19
+        }
+    ],
+    "step": [
+        {
+            "amount": "Cook",
+            "instruction": "Cook quinoa according to package instructions.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Combine",
+            "instruction": "Combine quinoa, diced cucumber, and crumbled feta.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Drizzle",
+            "instruction": "Drizzle with olive oil and lemon juice. Toss gently.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 25,
+    "title": "Turkey Club Sandwich",
+    "description": "A triple-decker sandwich with turkey, bacon, lettuce, and tomato.",
+    "image": "https://example.com/turkey_club_sandwich.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 14
+        },
+        {
+            "amount": 3,
+            "ingredientid": 5
+        },
+        {
+            "amount": 2,
+            "ingredientid": 11
+        }
+    ],
+    "step": [
+        {
+            "amount": "Layer",
+            "instruction": "Layer turkey, bacon, lettuce, and tomato on toasted bread.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Repeat",
+            "instruction": "Repeat for a triple-decker sandwich.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Secure",
+            "instruction": "Secure layers with toothpicks and cut in halves.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 26,
+    "title": "Blueberry Pancakes",
+    "description": "Fluffy pancakes filled with fresh blueberries.",
+    "image": "https://example.com/blueberry_pancakes.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 8
+        },
+        {
+            "amount": 100,
+            "ingredientid": 32
+        },
+        {
+            "amount": 50,
+            "ingredientid": 17
+        }
+    ],
+    "step": [
+        {
+            "amount": "Mix",
+            "instruction": "Mix pancake batter and fold in fresh blueberries.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Cook",
+            "instruction": "Cook pancakes on a griddle until golden brown.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve with maple syrup and extra blueberries.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 27,
+    "title": "Caprese Salad",
+    "description": "A simple and refreshing salad with tomatoes, mozzarella, and basil.",
+    "image": "https://example.com/caprese_salad.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 15
+        },
+        {
+            "amount": 150,
+            "ingredientid": 1
+        },
+        {
+            "amount": 1,
+            "ingredientid": 18
+        }
+    ],
+    "step": [
+        {
+            "amount": "Slice",
+            "instruction": "Slice tomatoes and fresh mozzarella into rounds.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Layer",
+            "instruction": "Layer with fresh basil leaves on a serving platter.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Drizzle",
+            "instruction": "Drizzle with balsamic glaze and olive oil.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 28,
+    "title": "Shrimp Stir-Fry",
+    "description": "A quick and flavorful stir-fry with shrimp and colorful vegetables.",
+    "image": "https://example.com/shrimp_stir_fry.jpg",
+    "ingredient": [
+        {
+            "amount": 200,
+            "ingredientid": 31
+        },
+        {
+            "amount": 1,
+            "ingredientid": 15
+        },
+        {
+            "amount": 1,
+            "ingredientid": 46
+        }
+    ],
+    "step": [
+        {
+            "amount": "Stir-Fry",
+            "instruction": "Stir-fry shrimp and vegetables in a wok or skillet.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Season",
+            "instruction": "Season with soy sauce, ginger, and garlic.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve over steamed rice or noodles.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 29,
+    "title": "Mango Salsa",
+    "description": "A vibrant salsa with fresh mango, tomatoes, and cilantro.",
+    "image": "https://example.com/mango_salsa.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 27
+        },
+        {
+            "amount": 2,
+            "ingredientid": 15
+        },
+        {
+            "amount": 1,
+            "ingredientid": 50
+        }
+    ],
+    "step": [
+        {
+            "amount": "Dice",
+            "instruction": "Dice mango, tomatoes, and red onion finely.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Mix",
+            "instruction": "Mix with chopped cilantro and lime juice.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Chill",
+            "instruction": "Chill in the refrigerator before serving.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 30,
+    "title": "Beef Tacos",
+    "description": "Delicious beef tacos with seasoned meat and favorite toppings.",
+    "image": "https://example.com/beef_tacos.jpg",
+    "ingredient": [
+        {
+            "amount": 200,
+            "ingredientid": 37
+        },
+        {
+            "amount": 1,
+            "ingredientid": 11
+        },
+        {
+            "amount": 1,
+            "ingredientid": 32
+        }
+    ],
+    "step": [
+        {
+            "amount": "Cook",
+            "instruction": "Cook seasoned beef until browned and fully cooked.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Warm",
+            "instruction": "Warm taco shells in the oven or on a skillet.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Assemble",
+            "instruction": "Assemble tacos with beef, lettuce, cheese, and salsa.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 1,
+    "title": "Spinach and Feta Stuffed Chicken",
+    "description": "Tender chicken breasts stuffed with spinach and feta cheese.",
+    "image": "https://example.com/stuffed_chicken.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 30
+        },
+        {
+            "amount": 100,
+            "ingredientid": 30
+        },
+        {
+            "amount": 50,
+            "ingredientid": 29
+        }
+    ],
+    "step": [
+        {
+            "amount": "Prep",
+            "instruction": "Preheat oven. Butterfly chicken breasts and stuff with spinach and feta.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Bake",
+            "instruction": "Bake until chicken is cooked through.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve with a side of roasted vegetables.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+{
+    "userid": 2,
+    "title": "Caramelized Onion and Mushroom Pizza",
+    "description": "Homemade pizza with a savory topping of caramelized onions and mushrooms.",
+    "image": "https://example.com/onion_mushroom_pizza.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 28
+        },
+        {
+            "amount": 150,
+            "ingredientid": 47
+        },
+        {
+            "amount": 1,
+            "ingredientid": 41
+        }
+    ],
+    "step": [
+        {
+            "amount": "Prepare",
+            "instruction": "Preheat oven. Roll out pizza dough and spread with caramelized onions and mushrooms.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Bake",
+            "instruction": "Bake until crust is golden and cheese is melted.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Slice",
+            "instruction": "Slice and enjoy your delicious pizza.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 3,
+    "title": "Avocado Toast with Poached Egg",
+    "description": "A trendy and nutritious breakfast featuring creamy avocado and a poached egg.",
+    "image": "https://example.com/avocado_toast.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 31
+        },
+        {
+            "amount": 1,
+            "ingredientid": 14
+        },
+        {
+            "amount": 1,
+            "ingredientid": 5
+        }
+    ],
+    "step": [
+        {
+            "amount": "Toast",
+            "instruction": "Toast bread slices. Mash avocado and spread on the toast.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Poach",
+            "instruction": "Poach an egg and place it on top of the avocado.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Season",
+            "instruction": "Season with salt, pepper, and red pepper flakes.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 4,
+    "title": "Lentil Soup",
+    "description": "Hearty lentil soup with vegetables, herbs, and a touch of lemon.",
+    "image": "https://example.com/lentil_soup.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 18
+        },
+        {
+            "amount": 200,
+            "ingredientid": 37
+        },
+        {
+            "amount": 1,
+            "ingredientid": 28
+        }
+    ],
+    "step": [
+        {
+            "amount": "Saute",
+            "instruction": "Saute onions, carrots, and celery. Add lentils, broth, and herbs.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Simmer",
+            "instruction": "Simmer until lentils are tender. Season with lemon juice.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve hot with a sprinkle of fresh parsley.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 5,
+    "title": "Mango Coconut Smoothie Bowl",
+    "description": "A tropical and refreshing smoothie bowl topped with fresh fruits and coconut.",
+    "image": "https://example.com/mango_coconut_smoothie_bowl.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 27
+        },
+        {
+            "amount": 1,
+            "ingredientid": 9
+        },
+        {
+            "amount": 1,
+            "ingredientid": 13
+        }
+    ],
+    "step": [
+        {
+            "amount": "Blend",
+            "instruction": "Blend mango, coconut milk, and yogurt until smooth.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Pour",
+            "instruction": "Pour into a bowl and top with sliced fruits, granola, and coconut flakes.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Enjoy",
+            "instruction": "Enjoy this tropical delight with a spoon.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 6,
+    "title": "Teriyaki Salmon",
+    "description": "Delicious teriyaki-glazed salmon fillets served with steamed broccoli and rice.",
+    "image": "https://example.com/teriyaki_salmon.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 34
+        },
+        {
+            "amount": 150,
+            "ingredientid": 37
+        },
+        {
+            "amount": 1,
+            "ingredientid": 38
+        }
+    ],
+    "step": [
+        {
+            "amount": "Marinate",
+            "instruction": "Marinate salmon in teriyaki sauce for at least 30 minutes.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Bake",
+            "instruction": "Bake salmon until it flakes easily. Steam broccoli and cook rice.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve salmon over rice with steamed broccoli on the side.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 7,
+    "title": "Quinoa Salad",
+    "description": "A nutritious salad featuring quinoa, fresh vegetables, and a zesty vinaigrette.",
+    "image": "https://example.com/quinoa_salad.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 22
+        },
+        {
+            "amount": 1,
+            "ingredientid": 11
+        },
+        {
+            "amount": 1,
+            "ingredientid": 15
+        }
+    ],
+    "step": [
+        {
+            "amount": "Cook",
+            "instruction": "Cook quinoa according to package instructions.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Chop",
+            "instruction": "Chop vegetables and mix with cooked quinoa.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Drizzle",
+            "instruction": "Drizzle with vinaigrette and toss well. Serve chilled.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 8,
+    "title": "Chicken Alfredo Pasta",
+    "description": "Creamy Alfredo pasta with grilled chicken and Parmesan cheese.",
+    "image": "https://example.com/chicken_alfredo_pasta.jpg",
+    "ingredient": [
+        {
+            "amount": 250,
+            "ingredientid": 30
+        },
+        {
+            "amount": 1,
+            "ingredientid": 2
+        },
+        {
+            "amount": 100,
+            "ingredientid": 40
+        }
+    ],
+    "step": [
+        {
+            "amount": "Cook",
+            "instruction": "Cook pasta according to package instructions. Grill chicken and slice.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Mix",
+            "instruction": "Mix cooked pasta with Alfredo sauce. Add grilled chicken and Parmesan.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Garnish",
+            "instruction": "Garnish with parsley and serve hot.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 9,
+    "title": "Chocolate Raspberry Tart",
+    "description": "Decadent chocolate tart with a layer of raspberry jam and fresh raspberries.",
+    "image": "https://example.com/chocolate_raspberry_tart.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 12
+        },
+        {
+            "amount": 150,
+            "ingredientid": 17
+        },
+        {
+            "amount": 2,
+            "ingredientid": 12
+        }
+    ],
+    "step": [
+        {
+            "amount": "Prepare",
+            "instruction": "Prepare a chocolate crust. Spread raspberry jam over the crust.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Melt",
+            "instruction": "Melt chocolate and pour over the raspberry layer. Arrange fresh raspberries on top.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Chill",
+            "instruction": "Chill until set. Slice and enjoy this delightful tart.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 9,
+    "title": "Chocolate Raspberry Tart",
+    "description": "Decadent chocolate tart with a layer of raspberry jam and fresh raspberries.",
+    "image": "https://example.com/chocolate_raspberry_tart.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 12
+        },
+        {
+            "amount": 150,
+            "ingredientid": 17
+        },
+        {
+            "amount": 2,
+            "ingredientid": 12
+        }
+    ],
+    "step": [
+        {
+            "amount": "Prepare",
+            "instruction": "Prepare a chocolate crust. Spread raspberry jam over the crust.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Melt",
+            "instruction": "Melt chocolate and pour over the raspberry layer. Arrange fresh raspberries on top.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Chill",
+            "instruction": "Chill until set. Slice and enjoy this delightful tart.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 10,
+    "title": "Vegetarian Stir-Fry",
+    "description": "A colorful and flavorful stir-fry with an assortment of fresh vegetables.",
+    "image": "https://example.com/vegetarian_stir_fry.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 11
+        },
+        {
+            "amount": 1,
+            "ingredientid": 19
+        },
+        {
+            "amount": 1,
+            "ingredientid": 46
+        }
+    ],
+    "step": [
+        {
+            "amount": "Stir-Fry",
+            "instruction": "Stir-fry vegetables in a wok or skillet. Add your favorite sauce.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Season",
+            "instruction": "Season with soy sauce, ginger, and garlic. Toss well.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve over rice or noodles. Garnish with sesame seeds.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 11,
+    "title": "Berry Parfait",
+    "description": "A delightful parfait layered with Greek yogurt, granola, and mixed berries.",
+    "image": "https://example.com/berry_parfait.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 19
+        },
+        {
+            "amount": 150,
+            "ingredientid": 17
+        },
+        {
+            "amount": 1,
+            "ingredientid": 9
+        }
+    ],
+    "step": [
+        {
+            "amount": "Layer",
+            "instruction": "In a glass, layer Greek yogurt, granola, and mixed berries.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Repeat",
+            "instruction": "Repeat the layers. Top with a drizzle of honey.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Enjoy",
+            "instruction": "Enjoy this healthy and delicious berry parfait.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 12,
+    "title": "Eggplant Parmesan",
+    "description": "Layers of breaded and baked eggplant slices with marinara sauce and melted cheese.",
+    "image": "https://example.com/eggplant_parmesan.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 21
+        },
+        {
+            "amount": 200,
+            "ingredientid": 2
+        },
+        {
+            "amount": 1,
+            "ingredientid": 15
+        }
+    ],
+    "step": [
+        {
+            "amount": "Slice",
+            "instruction": "Slice eggplant and dip in breadcrumbs. Bake until golden brown.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Layer",
+            "instruction": "Layer baked eggplant with marinara sauce and mozzarella cheese.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Bake",
+            "instruction": "Bake until cheese is melted and bubbly. Serve hot.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 13,
+    "title": "Shrimp Tacos",
+    "description": "Tasty shrimp tacos with slaw, avocado, and a zesty lime crema.",
+    "image": "https://example.com/shrimp_tacos.jpg",
+    "ingredient": [
+        {
+            "amount": 200,
+            "ingredientid": 37
+        },
+        {
+            "amount": 1,
+            "ingredientid": 11
+        },
+        {
+            "amount": 1,
+            "ingredientid": 32
+        }
+    ],
+    "step": [
+        {
+            "amount": "Grill",
+            "instruction": "Grill shrimp with taco seasoning until cooked.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Assemble",
+            "instruction": "Assemble tacos with slaw, grilled shrimp, and avocado slices.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Drizzle",
+            "instruction": "Drizzle with lime crema. Enjoy these flavorful shrimp tacos.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 14,
+    "title": "Lemon Blueberry Muffins",
+    "description": "Light and fluffy muffins bursting with juicy blueberries and a hint of lemon.",
+    "image": "https://example.com/lemon_blueberry_muffins.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 33
+        },
+        {
+            "amount": 1,
+            "ingredientid": 17
+        },
+        {
+            "amount": 1,
+            "ingredientid": 4
+        }
+    ],
+    "step": [
+        {
+            "amount": "Mix",
+            "instruction": "Mix dry and wet ingredients separately. Combine and fold in blueberries.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Fill",
+            "instruction": "Fill muffin cups and bake until golden. Cool before serving.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Enjoy",
+            "instruction": "Enjoy these delightful lemon blueberry muffins with a cup of tea.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 15,
+    "title": "Caprese Salad",
+    "description": "A classic Caprese salad with fresh tomatoes, mozzarella, basil, and balsamic glaze.",
+    "image": "https://example.com/caprese_salad.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 15
+        },
+        {
+            "amount": 150,
+            "ingredientid": 6
+        },
+        {
+            "amount": 1,
+            "ingredientid": 16
+        }
+    ],
+    "step": [
+        {
+            "amount": "Slice",
+            "instruction": "Slice tomatoes and mozzarella. Arrange on a plate with fresh basil leaves.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Drizzle",
+            "instruction": "Drizzle with balsamic glaze. Sprinkle with salt and pepper.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve this refreshing Caprese salad as a light appetizer.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 16,
+    "title": "Spinach and Feta Stuffed Chicken",
+    "description": "Juicy chicken breasts stuffed with spinach, feta, and sun-dried tomatoes.",
+    "image": "https://example.com/spinach_feta_stuffed_chicken.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 30
+        },
+        {
+            "amount": 100,
+            "ingredientid": 8
+        },
+        {
+            "amount": 1,
+            "ingredientid": 47
+        }
+    ],
+    "step": [
+        {
+            "amount": "Butterfly",
+            "instruction": "Butterfly chicken breasts and season. Spread spinach, feta, and sun-dried tomatoes.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Roll",
+            "instruction": "Roll and secure with toothpicks. Bake until chicken is cooked through.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Slice",
+            "instruction": "Slice and serve these flavorful stuffed chicken breasts.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 17,
+    "title": "Mango Salsa",
+    "description": "Refreshing salsa with ripe mango, red onion, cilantro, and lime juice.",
+    "image": "https://example.com/mango_salsa.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 37
+        },
+        {
+            "amount": 1,
+            "ingredientid": 28
+        },
+        {
+            "amount": 1,
+            "ingredientid": 14
+        }
+    ],
+    "step": [
+        {
+            "amount": "Dice",
+            "instruction": "Dice mango, red onion, and mix with chopped cilantro.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Combine",
+            "instruction": "Combine ingredients and squeeze lime juice. Chill before serving.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Enjoy",
+            "instruction": "Enjoy this mango salsa with tortilla chips or as a topping.",
+            "step_number": "3"
+        }
+    ]
+}
+,
+    {
+    "userid": 17,
+    "title": "Beef Stir-Fry",
+    "description": "Savory beef stir-fry with a medley of colorful vegetables and soy ginger sauce.",
+    "image": "https://example.com/beef_stir_fry.jpg",
+    "ingredient": [
+        {
+            "amount": 300,
+            "ingredientid": 2
+        },
+        {
+            "amount": 1,
+            "ingredientid": 11
+        },
+        {
+            "amount": 1,
+            "ingredientid": 14
+        },
+        {
+            "amount": 1,
+            "ingredientid": 29
+        }
+    ],
+    "step": [
+        {
+            "amount": "Marinate",
+            "instruction": "Marinate beef slices in soy ginger sauce for 30 minutes.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Stir-Fry",
+            "instruction": "Stir-fry beef and vegetables in a hot wok. Add more sauce and toss well.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve over steamed rice. Garnish with green onions.",
+            "step_number": "3"
+        },
+        {
+            "amount": "Enjoy",
+            "instruction": "Enjoy this flavorful beef stir-fry with family and friends.",
+            "step_number": "4"
+        }
+    ]
+},
+
+    {
+    "userid": 18,
+    "title": "Avocado Toast",
+    "description": "A simple yet satisfying breakfast featuring mashed avocado on whole grain toast.",
+    "image": "https://example.com/avocado_toast.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 5
+        },
+        {
+            "amount": 1,
+            "ingredientid": 9
+        },
+        {
+            "amount": 1,
+            "ingredientid": 25
+        }
+    ],
+    "step": [
+        {
+            "amount": "Toast",
+            "instruction": "Toast slices of whole grain bread until golden brown.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Mash",
+            "instruction": "Mash ripe avocados and spread over toasted bread.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Season",
+            "instruction": "Season with salt, pepper, and a drizzle of olive oil. Sprinkle red pepper flakes.",
+            "step_number": "3"
+        },
+        {
+            "amount": "Garnish",
+            "instruction": "Garnish with cherry tomatoes and fresh cilantro. Serve immediately.",
+            "step_number": "4"
+        }
+    ]
+}
+,
+    {
+    "userid": 19,
+    "title": "Chicken Noodle Soup",
+    "description": "Comforting chicken noodle soup with tender chicken, vegetables, and egg noodles.",
+    "image": "https://example.com/chicken_noodle_soup.jpg",
+    "ingredient": [
+        {
+            "amount": 1,
+            "ingredientid": 29
+        },
+        {
+            "amount": 2,
+            "ingredientid": 30
+        },
+        {
+            "amount": 1,
+            "ingredientid": 11
+        },
+        {
+            "amount": 2,
+            "ingredientid": 3
+        }
+    ],
+    "step": [
+        {
+            "amount": "Boil",
+            "instruction": "Boil chicken in a pot until cooked. Shred into bite-sized pieces.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Simmer",
+            "instruction": "Simmer chicken broth with vegetables and egg noodles until tender.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Combine",
+            "instruction": "Combine shredded chicken with soup. Season with salt and pepper.",
+            "step_number": "3"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve hot. Perfect for a cozy night in.",
+            "step_number": "4"
+        }
+    ]
+}
+,
+    {
+    "userid": 20,
+    "title": "Mango Salsa Chicken",
+    "description": "Grilled chicken topped with fresh mango salsa for a burst of tropical flavors.",
+    "image": "https://example.com/mango_salsa_chicken.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 47
+        },
+        {
+            "amount": 1,
+            "ingredientid": 13
+        },
+        {
+            "amount": 1,
+            "ingredientid": 26
+        },
+        {
+            "amount": 1,
+            "ingredientid": 15
+        }
+    ],
+    "step": [
+        {
+            "amount": "Grill",
+            "instruction": "Grill chicken breasts until cooked through and juicy.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Prepare",
+            "instruction": "Prepare mango salsa by combining diced mango, red onion, cilantro, and lime juice.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Top",
+            "instruction": "Top grilled chicken with mango salsa. Garnish with extra cilantro.",
+            "step_number": "3"
+        },
+        {
+            "amount": "Enjoy",
+            "instruction": "Enjoy this vibrant and flavorful mango salsa chicken dish.",
+            "step_number": "4"
+        }
+    ]
+}
+,
+    {
+    "userid": 22,
+    "title": "Vegetable Biryani",
+    "description": "A flavorful and aromatic Indian rice dish with mixed vegetables and biryani spices.",
+    "image": "https://example.com/vegetable_biryani.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 12
+        },
+        {
+            "amount": 1,
+            "ingredientid": 23
+        },
+        {
+            "amount": 1,
+            "ingredientid": 40
+        },
+        {
+            "amount": 1,
+            "ingredientid": 28
+        }
+    ],
+    "step": [
+        {
+            "amount": "Saute",
+            "instruction": "Saute vegetables and biryani spices in ghee until aromatic.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Layer",
+            "instruction": "Layer partially cooked rice and sautéed vegetables. Repeat.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Cook",
+            "instruction": "Cover and cook until rice is tender. Garnish with fried onions and cilantro.",
+            "step_number": "3"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve hot with raita. Enjoy this delicious vegetable biryani.",
+            "step_number": "4"
+        }
+    ]
+}
+,
+    {
+    "userid": 23,
+    "title": "Teriyaki Salmon",
+    "description": "Grilled salmon fillets glazed with homemade teriyaki sauce, served with steamed broccoli.",
+    "image": "https://example.com/teriyaki_salmon.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 36
+        },
+        {
+            "amount": 2,
+            "ingredientid": 10
+        },
+        {
+            "amount": 1,
+            "ingredientid": 33
+        },
+        {
+            "amount": 1,
+            "ingredientid": 14
+        }
+    ],
+    "step": [
+        {
+            "amount": "Marinate",
+            "instruction": "Marinate salmon fillets in teriyaki sauce for at least 30 minutes.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Grill",
+            "instruction": "Grill salmon until caramelized. Steam broccoli until tender-crisp.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Plate",
+            "instruction": "Plate salmon over a bed of steamed broccoli. Drizzle with extra teriyaki sauce.",
+            "step_number": "3"
+        },
+        {
+            "amount": "Savor",
+            "instruction": "Savor the flavors of this delicious teriyaki salmon dish.",
+            "step_number": "4"
+        }
+    ]
+}
+,
+    {
+    "userid": 24,
+    "title": "Spaghetti Carbonara",
+    "description": "Classic Italian pasta dish with spaghetti, crispy bacon, eggs, and Parmesan cheese.",
+    "image": "https://example.com/spaghetti_carbonara.jpg",
+    "ingredient": [
+        {
+            "amount": 200,
+            "ingredientid": 1
+        },
+        {
+            "amount": 100,
+            "ingredientid": 7
+        },
+        {
+            "amount": 2,
+            "ingredientid": 9
+        },
+        {
+            "amount": 50,
+            "ingredientid": 27
+        }
+    ],
+    "step": [
+        {
+            "amount": "Boil",
+            "instruction": "Boil spaghetti until al dente. Reserve some pasta water.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Saute",
+            "instruction": "Saute bacon until crispy. Add cooked spaghetti to the pan.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Mix",
+            "instruction": "Mix eggs, Parmesan, and a bit of pasta water. Pour over spaghetti and toss.",
+            "step_number": "3"
+        },
+        {
+            "amount": "Garnish",
+            "instruction": "Garnish with black pepper and extra Parmesan. Serve immediately.",
+            "step_number": "4"
+        }
+    ]
+}
+,
+    {
+    "userid": 25,
+    "title": "Veggie Quesadillas",
+    "description": "Cheesy quesadillas stuffed with sautéed vegetables and served with salsa and guacamole.",
+    "image": "https://example.com/veggie_quesadillas.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 11
+        },
+        {
+            "amount": 1,
+            "ingredientid": 21
+        },
+        {
+            "amount": 1,
+            "ingredientid": 45
+        },
+        {
+            "amount": 1,
+            "ingredientid": 15
+        }
+    ],
+    "step": [
+        {
+            "amount": "Saute",
+            "instruction": "Saute bell peppers, onions, and mushrooms until tender.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Assemble",
+            "instruction": "Assemble quesadillas with sautéed veggies and shredded cheese.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Cook",
+            "instruction": "Cook until cheese is melted and tortillas are golden brown on both sides.",
+            "step_number": "3"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve with salsa, guacamole, and sour cream. Enjoy these veggie quesadillas.",
+            "step_number": "4"
+        }
+    ]
+}
+,
+    {
+    "userid": 26,
+    "title": "Thai Green Curry",
+    "description": "A fragrant Thai green curry with chicken, vegetables, and coconut milk.",
+    "image": "https://example.com/thai_green_curry.jpg",
+    "ingredient": [
+        {
+            "amount": 300,
+            "ingredientid": 20
+        },
+        {
+            "amount": 1,
+            "ingredientid": 36
+        },
+        {
+            "amount": 1,
+            "ingredientid": 4
+        },
+        {
+            "amount": 1,
+            "ingredientid": 8
+        }
+    ],
+    "step": [
+        {
+            "amount": "Simmer",
+            "instruction": "Simmer chicken, vegetables, and Thai green curry paste in coconut milk.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Add",
+            "instruction": "Add bamboo shoots, bell peppers, and Thai basil. Cook until flavors meld.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve hot over jasmine rice. Garnish with cilantro.",
+            "step_number": "3"
+        },
+        {
+            "amount": "Enjoy",
+            "instruction": "Enjoy the aromatic and spicy Thai green curry.",
+            "step_number": "4"
+        }
+    ]
+}
+,
+    {
+    "userid": 27,
+    "title": "Caprese Salad",
+    "description": "A refreshing Italian salad with ripe tomatoes, fresh mozzarella, basil, and balsamic glaze.",
+    "image": "https://example.com/caprese_salad.jpg",
+    "ingredient": [
+        {
+            "amount": 4,
+            "ingredientid": 15
+        },
+        {
+            "amount": 200,
+            "ingredientid": 6
+        },
+        {
+            "amount": 1,
+            "ingredientid": 22
+        },
+        {
+            "amount": 2,
+            "ingredientid": 5
+        }
+    ],
+    "step": [
+        {
+            "amount": "Slice",
+            "instruction": "Slice tomatoes and fresh mozzarella into equal-sized rounds.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Arrange",
+            "instruction": "Arrange tomato, mozzarella, and basil leaves in a circular pattern.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Drizzle",
+            "instruction": "Drizzle balsamic glaze over the salad. Season with salt and pepper.",
+            "step_number": "3"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve as a refreshing appetizer or side dish. Buon appetito!",
+            "step_number": "4"
+        }
+    ]
+}
+,
+    {
+    "userid": 28,
+    "title": "Chicken Parmesan",
+    "description": "Crispy breaded chicken breasts topped with marinara sauce and melted mozzarella.",
+    "image": "https://example.com/chicken_parmesan.jpg",
+    "ingredient": [
+        {
+            "amount": 2,
+            "ingredientid": 29
+        },
+        {
+            "amount": 1,
+            "ingredientid": 7
+        },
+        {
+            "amount": 1,
+            "ingredientid": 16
+        },
+        {
+            "amount": 1,
+            "ingredientid": 24
+        }
+    ],
+    "step": [
+        {
+            "amount": "Bread",
+            "instruction": "Bread chicken breasts with seasoned breadcrumbs. Bake until golden.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Top",
+            "instruction": "Top with marinara sauce and shredded mozzarella. Bake until cheese melts.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Serve",
+            "instruction": "Serve over spaghetti or your favorite pasta. Mangia!",
+            "step_number": "3"
+        },
+        {
+            "amount": "Enjoy",
+            "instruction": "Enjoy this classic Chicken Parmesan dish with family and friends.",
+            "step_number": "4"
+        }
+    ]
+}
+,
+    {
+    "userid": 29,
+    "title": "Shrimp Tacos",
+    "description": "Zesty shrimp tacos with avocado crema, slaw, and a squeeze of lime.",
+    "image": "https://example.com/shrimp_tacos.jpg",
+    "ingredient": [
+        {
+            "amount": 200,
+            "ingredientid": 2
+        },
+        {
+            "amount": 1,
+            "ingredientid": 21
+        },
+        {
+            "amount": 1,
+            "ingredientid": 37
+        },
+        {
+            "amount": 1,
+            "ingredientid": 3
+        }
+    ],
+    "step": [
+        {
+            "amount": "Season",
+            "instruction": "Season shrimp with taco seasoning. Cook until pink and opaque.",
+            "step_number": "1"
+        },
+        {
+            "amount": "Assemble",
+            "instruction": "Assemble tacos with cooked shrimp, slaw, and avocado crema.",
+            "step_number": "2"
+        },
+        {
+            "amount": "Garnish",
+            "instruction": "Garnish with cilantro and a squeeze of lime. Serve immediately.",
+            "step_number": "3"
+        },
+        {
+            "amount": "Enjoy",
+            "instruction": "Enjoy these flavorful and zesty shrimp tacos.",
+            "step_number": "4"
+        }
+    ]
+}
+,
+
+]

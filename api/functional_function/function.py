@@ -19,7 +19,7 @@ conn = psycopg2.connect(
     host='ep-sweet-darkness-58939442.il-central-1.aws.neon.tech',
     dbname='Feast',
     user='rezatahmasbi1381',
-    password='tzkpv3ao5NPO',
+    password='oiNqd5ELuH7p',
     sslmode='require',
     port ='5432'
 )

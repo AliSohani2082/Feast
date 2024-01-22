@@ -13,15 +13,23 @@ def Specific_ingredient(name):
     return {"status_code":202 , "content": cursor.fetchall()}
 
 
-def Add_ingredient(name ,type ,price_per_unit ,image ,unit_type):
-    cursor.execute(f"SELECT * FROM \"ingredient\" WHERE \"name\"='{name}'")
-    result = cursor.fetchall()
-    if result:
-        return {"status_code":500 ,"content":"this ingredient already exist"}
-    else:
-        cursor.execute(f"INSERT INTO \"ingredient\"(name,type,price_per_unit,image,unit_type) VALUES('{name}','{type}','{price_per_unit}','{image}','{unit_type}')")
-        conn.commit()
-        return {"status_code":202 ,"content":"added"}
+def Add_ingredient(item):
+    re = ""
+    print(item)
+    for i in item:
+        print(i)
+        cursor.execute(f"SELECT * FROM \"ingredient\" WHERE \"name\"='{i.name}'")
+        result = cursor.fetchall()
+        if result:
+            re += "this ingredient already exist\n"
+        else:
+            print(i.name)
+            cursor.execute(f"INSERT INTO \"ingredient\"(name,type,price_per_unit,image,unit_type) VALUES('{i.name}','{i.type}','{i.price_per_unit}','{i.image}','{i.unit_type}')")
+            conn.commit()
+
+            re += i.name+" added\n"
+    print(re)
+    return {"status_code":202, "content":re}
 
 def Add_ingredient(item):
 
