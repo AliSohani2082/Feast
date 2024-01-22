@@ -4,6 +4,8 @@ from api.functional_function.function import conn,cursor
 # this function return all posts
 def All_post():
     cursor.execute("SELECT \"ID\",\"userid\",\"title\",\"description\",\"image\",\"like_count\" FROM \"Post\"")
+    # cursor.execute("SELECT * FROM \"Post\"")
+
     return {"status_code":202, "content":cursor.fetchall()}
 
 
@@ -72,6 +74,29 @@ def Reaction(PID,UID,mode):
         return {"status_code":203, "content":"the request is not possible"}
         # raise "the request is not possible"
 
+
+
+
+def Add_posts(item):
+     re = ""
+     for i in item:
+         cursor.execute(f"INSERT INTO \"Post\"(userid,title,description,image,like_count,time) VALUES({int(i.userid)},'{i.title}','{i.description}','{i.image}',0,CURRENT_DATE) RETURNING \"ID\";")
+
+         # this line,return the postid that was created
+         id = cursor.fetchone()
+
+         for j in i.step:
+             cursor.execute(
+                 f"INSERT INTO \"Step\"(postid,amount,instruction,step_number) VALUES({int(id[0])},'{j.amount}','{j.instruction}','{j.step_number}')")
+
+         for j in i.ingredient:
+             cursor.execute(
+                 f"INSERT INTO \"Post_ingredient\"(postid,amount,ingredientid) VALUES({int(id[0])},'{j.amount}','{j.ingredientid}')")
+
+         conn.commit()
+         re += i.title + "The post was published successfully\n"
+
+     return {"status_code": 202, "content": re}
 
 
 
