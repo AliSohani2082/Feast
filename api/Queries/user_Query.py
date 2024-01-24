@@ -1,12 +1,12 @@
 import hashlib
 from api.functional_function.function import conn,cursor
-
+import json
 
 
 # this function return all users
 def All_user():
     cursor.execute('SELECT * FROM "User" ORDER BY "ID"')
-    return {"status_code":202 , "content":cursor.fetchall()}
+    return {"status_code":202 , "content":json.dumps(cursor.fetchall())}
 
 
 # this function register user if the username does not exist return the message if the operation was successful .
@@ -21,7 +21,7 @@ def Register_user(F, E, P, U, PI, PN):
     conn.commit()
 
     cursor.execute(f"SELECT * FROM \"User\" WHERE \"username\" = '{U}'")
-    return {"status_code":201, "content":cursor.fetchall()}
+    return {"status_code":201, "content":json.dumps(cursor.fetchall())}
 
 
 # this function edits the user profile
