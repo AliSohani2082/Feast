@@ -15,12 +15,13 @@ def ingredient_to_json(ingredient):
 #                         user="AliSohani2082",
 #                         password="oTsYDgB4P8Wp")
 
+
 conn = psycopg2.connect(
     host='ep-sweet-darkness-58939442.il-central-1.aws.neon.tech',
     dbname='Feast',
     user='rezatahmasbi1381',
-    password='tzkpv3ao5NPO',
+    password='oiNqd5ELuH7p',
     sslmode='require',
-    port ='5432'
+    port='5432'
 )
 cursor = conn.cursor()

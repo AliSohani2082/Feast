@@ -14,11 +14,12 @@ export type IUpdateUser = {
 };
 
 export type INewPost = {
-  userId: string;
-  caption: string;
-  file: File[];
-  location?: string;
-  tags?: string;
+  userid: string;
+  title: string;
+  description: string;
+  image: string;
+  ingredient: Ingredient[]
+  step: Step[]
 };
 
 export type IUpdatePost = {
@@ -41,14 +42,27 @@ export type IUser = {
 };
 
 export type INewUser = {
-  name: string;
+  full_name: string;
   email: string;
-  username: string;
   password: string;
-  confirmPassword: string;
+  username: string;
+  profile_image: string;
+  phone_number: string;
 };
 
+export type Ilogin = {
+  username: string;
+  password: string;
+}
+
 // Database
+export type Step = {
+
+}
+
+export type Ingredient = {
+
+}
 
 export type Post = {
   id: string;

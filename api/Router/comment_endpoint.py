@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 from starlette.responses import JSONResponse
 
-from api.Queries.comment_Query import *
-from api.model.models import *
+from Queries.comment_Query import *
+from model.models import *
 
 router = APIRouter()
 
@@ -23,14 +23,14 @@ async def all_post_comment(PID):
 # This function receives a new comment
 @router.post('/add_comment')
 async def add_comment(item: Comment):
-    result = Add_comment(item.postid ,item.userid ,item.content)
+    result = Add_comment(item.postid, item.userid, item.content)
     return JSONResponse(status_code=result["status_code"], content=result["content"])
 
 
 # This function receives new information to edit a comment
 @router.patch('/edit_comment')
 async def edit_comment(item: edit_comment):
-    result = Edit_comment(item.ID ,item.content)
+    result = Edit_comment(item.ID, item.content)
     return JSONResponse(status_code=result["status_code"], content=result["content"])
 
 
@@ -44,15 +44,12 @@ async def delete_comment(ID):
 # I will add this function to the likes of a specific comment
 @router.patch('/like_comment/{ID}')
 async def like_comment(ID):
-    result = Reaction(ID,mode='like')
+    result = Reaction(ID, mode='like')
     return JSONResponse(status_code=result["status_code"], content=result["content"])
 
 
 # I will add this function to the likes of a specific comment
 @router.patch('/dislike_comment/{ID}')
 async def dislike_comment(ID):
-    result = Reaction(ID,mode='dislike')
+    result = Reaction(ID, mode='dislike')
     return JSONResponse(status_code=result["status_code"], content=result["content"])
-
-
-

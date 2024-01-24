@@ -4,7 +4,7 @@ import { useState } from 'react';
 import * as z from 'zod';
 import { useForm } from 'react-hook-form';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import {
@@ -28,6 +28,7 @@ import {
 import { SignupValidation } from '@/lib/validation';
 import Logo from '@/components/shared/Logo';
 import { useUserContext } from '@/context/AuthContext';
+import { signUp } from '@/lib/api';
 
 const SignUpForm = () => {
   const router = useRouter();
@@ -47,46 +48,22 @@ const SignUpForm = () => {
     },
   });
 
-  // Queries
-  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } =
-    useCreateUserAccount();
-  const { mutateAsync: signInAccount, isPending: isSigningInUser } =
-    useSignInAccount();
-
   // Handler
   const handleSignup = async (user: z.infer<typeof SignupValidation>) => {
     try {
-      const newUser = await createUserAccount(user);
-
-      if (!newUser) {
-        toast({ title: 'Sign up failed. Please try again.' });
-        return;
-      }
-
-      const session = await signInAccount({
+      const result = await signUp({
+        full_name: user.name,
         email: user.email,
         password: user.password,
-      });
-
-      if (!session) {
-        toast({ title: 'Something went wrong. Please login your new account' });
-        router.push('/sign-in');
-
-        return;
-      }
-
-      const isLoggedIn = await checkAuthUser();
-      if (isLoggedIn) {
-        form.reset();
-
-        router.push('/');
-      } else {
-        toast({ title: 'Login failed. Please try again.' });
-
-        return;
-      }
-    } catch (error) {
-      console.log({ error });
+        username: `@${user.username}`,
+        profile_image: "",
+        phone_number: "",
+      })
+      console.log(result.data[0])
+      localStorage.setItem("profile", result.data[0])
+      redirect("/")
+    } catch(error) {
+      console.log("Error fetching data: ", error)
     }
   };
 
@@ -181,13 +158,8 @@ const SignUpForm = () => {
           </Button> */}
 
           <Button type="submit" className="shad-button_primary">
-            {isCreatingAccount || isSigningInUser || isUserLoading ? (
-              <div className="flex-center gap-2">
-                <Loader /> Loading...
-              </div>
-            ) : (
-              'Sign Up'
-            )}
+            
+            Sign Up
           </Button>
 
           <p className="text-small-regular text-light-2 text-center mt-2">

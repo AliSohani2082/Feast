@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 from starlette.responses import JSONResponse
 
-from api.Queries.step_Query import *
-from api.model.models import *
+from Queries.step_Query import *
+from model.models import *
 import re
 
 router = APIRouter()
@@ -32,11 +32,11 @@ async def add_step(item: Step_list):
 @router.patch('/edit_step')
 async def edit_step(item: Step_list):
     result = Edit_step(item)
-    return JSONResponse(status_code=result["status_code"], content= result["content"])
+    return JSONResponse(status_code=result["status_code"], content=result["content"])
 
 
 # this function delete a specific step
 @router.delete('/delete_step/{PID}/{SN}')
-async def delete_step(PID,SN):
-    result = Delete_step(PID,SN)
+async def delete_step(PID, SN):
+    result = Delete_step(PID, SN)
     return JSONResponse(status_code=result["status_code"], content=result["content"])

@@ -3,7 +3,7 @@ import * as z from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 
 import {
   Form,
@@ -22,43 +22,32 @@ import { SigninValidation } from '@/lib/validation';
 import { useSignInAccount } from '@/lib/react-query/queries';
 import { useUserContext } from '@/context/AuthContext';
 import Logo from '@/components/shared/Logo';
+import { signIn } from '@/lib/api';
 
 const SigninForm = () => {
   const { toast } = useToast();
   const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
 
-  // Query
-  const { mutateAsync: signInAccount, isPending } = useSignInAccount();
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof SigninValidation>>({
     resolver: zodResolver(SigninValidation),
     defaultValues: {
-      email: '',
+      username: '',
       password: '',
     },
   });
 
   const handleSignin = async (user: z.infer<typeof SigninValidation>) => {
-    const session = await signInAccount(user);
-    if (!session) {
-      console.log('boo');
-      toast({ title: 'Login failed. Please try again..' });
-
-      return;
-    }
-    console.log('this is session: ');
-    console.log(session);
-
-    const isLoggedIn = await checkAuthUser();
-
-    if (isLoggedIn) {
-      form.reset();
-
-      redirect('/');
-    } else {
-      toast({ title: 'Login failed. Please try again.' });
-
-      return;
+    try {
+      const result = await signIn({
+        username: `@${user.username}`,
+        password: user.password
+      })
+      console.log(result)
+      router.push("/")
+    } catch(error) {
+      console.log("error ocured")
     }
   };
 
@@ -79,10 +68,10 @@ const SigninForm = () => {
         >
           <FormField
             control={form.control}
-            name="email"
+            name="username"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="shad-form_label">Email</FormLabel>
+                <FormLabel className="shad-form_label">Username</FormLabel>
                 <FormControl>
                   <Input type="text" className="shad-input" {...field} />
                 </FormControl>
