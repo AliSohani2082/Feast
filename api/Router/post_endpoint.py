@@ -9,6 +9,7 @@ from api.model.models import *
 
 router = APIRouter()
 
+
 # This function sends all posts to the client
 @router.get('/all_posts')
 async def all_post():
@@ -69,3 +70,7 @@ async def dislike_post(PID,UID):
 
 
 
+@router.post('/add_posts')
+async def add_posts(item: list[Postdetails]):
+    result = Add_posts(item)
+    return JSONResponse(status_code = result["status_code"], content=result["content"])

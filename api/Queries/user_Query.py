@@ -5,7 +5,7 @@ from api.functional_function.function import conn,cursor
 
 # this function return all users
 def All_user():
-    cursor.execute('SELECT * FROM "User" ORDER BY "username"')
+    cursor.execute('SELECT * FROM "User" ORDER BY "ID"')
     return {"status_code":202 , "content":cursor.fetchall()}
 
 

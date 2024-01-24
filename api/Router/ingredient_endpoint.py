@@ -30,20 +30,20 @@ async def add_ingredient(item: list[Ingredient]):
     result = Add_ingredient(item)
     return JSONResponse(status_code=result['status_code'] ,content=result['content'])
 
-    for j in item:
-        i = ingredient_to_json(j)
-        if not re.fullmatch("^[a-zA-Z\s]+",i["name"]):
-            return JSONResponse(status_code=403, content="name is not valid")
-        elif not re.fullmatch("^[a-zA-Z]+",i["type"]):
-            return JSONResponse(status_code=403, content="type is not valid")
-        elif not re.fullmatch("^[0-9]+\.[0-9]+",i["price_per_unit"]):
-            return JSONResponse(status_code=403, content="price is not valid")
-        elif not re.fullmatch("[a-zA-Z]+",i["unit_type"]):
-            return JSONResponse(status_code=403, content="unit is not valid")
-        else:
-            # result = Add_ingredient(i["name"] ,i["type"] ,i["price_per_unit"] ,i["image"] ,i["unit_type"])
-            result = Add_ingredient()
-            return JSONResponse(status_code=result["status_code"], content=result["content"])
+    # for j in item:
+    #     i = ingredient_to_json(j)
+    #     if not re.fullmatch("^[a-zA-Z\s]+",i["name"]):
+    #         return JSONResponse(status_code=403, content="name is not valid")
+    #     elif not re.fullmatch("^[a-zA-Z]+",i["type"]):
+    #         return JSONResponse(status_code=403, content="type is not valid")
+    #     elif not re.fullmatch("^[0-9]+\.[0-9]+",i["price_per_unit"]):
+    #         return JSONResponse(status_code=403, content="price is not valid")
+    #     elif not re.fullmatch("[a-zA-Z]+",i["unit_type"]):
+    #         return JSONResponse(status_code=403, content="unit is not valid")
+    #     else:
+    #         # result = Add_ingredient(i["name"] ,i["type"] ,i["price_per_unit"] ,i["image"] ,i["unit_type"])
+    #         result = Add_ingredient()
+    #         return JSONResponse(status_code=result["status_code"], content=result["content"])
 
 
 # This function deletes an item
