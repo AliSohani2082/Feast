@@ -6,11 +6,11 @@ from api.functional_function.function import *
 
 def All_ingredient():
     cursor.execute("SELECT * FROM \"ingredient\"")
-    return {"status_code":202 , "content":cursor.fetchall()}
+    return {"status_code":202 , "content":json.dumps(cursor.fetchall())}
 
 def Specific_ingredient(name):
     cursor.execute(f" SELECT * FROM \"ingredient\" WHERE \"name\" = '{name}'")
-    return {"status_code":202 , "content": cursor.fetchall()}
+    return {"status_code":202 , "content": json.dumps(cursor.fetchall())}
 
 
 def Add_ingredient(item):

@@ -73,7 +73,7 @@ def Reaction(PID,UID,mode):
         conn.commit()
         return {"status_code":202, "content":"The post was liked"}
     elif mode == 'dislike':
-        cursor.execute(f"UPDATE \"Post\" set \"like_count\" = \"like_count\ - 1")
+        cursor.execute(f"UPDATE \"Post\" set \"like_count\" = \"like_count\ - 1 WHERE \"like_count\" <> 0")
         conn.commit()
         return {"status_code":202, "content":"The post was disliked"}
     else:
