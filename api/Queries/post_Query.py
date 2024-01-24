@@ -1,30 +1,36 @@
 from api.functional_function.function import conn,cursor
 
+import json
 
 # this function return all posts
 def All_post():
     cursor.execute("SELECT \"ID\",\"userid\",\"title\",\"description\",\"image\",\"like_count\" FROM \"Post\"")
     # cursor.execute("SELECT * FROM \"Post\"")
 
-    return {"status_code":202, "content":cursor.fetchall()}
+    return {"status_code":202, "content":json.dumps(cursor.fetchall())}
 
 
 #this function return all user post
-def All_user_post(UID):
-    cursor.execute(f"SELECT * FROM \"Post\" WHERE \"ID\" = {int(UID)}")
-    return {"status_code":202 , "content":cursor.fetchall()}
+def All_user_post(UN):
+    cursor.execute(f"SELECT \"Post\".\"ID\",\"Post\".\"userid\",\"Post\".\"title\",\"Post\".\"description\",\"Post\".\"image\",\"Post\".\"like_count\" FROM \"Post\" INNER JOIN \"User\" ON \"Post\".\"userid\" = \"User\".\"ID\" WHERE \"username\" = '{UN}'")
+
+    return {"status_code": 202, "content": json.dumps(cursor.fetchall())}
 
 
 # this function return the specific post
 def Specific_post(PID):
-    cursor.execute(f"SELECT * FROM \"Post\" WHERE \"ID\" = {int(PID)}")
-    return {"status_code":202, "content":cursor.fetchall()}
+    cursor.execute(f"SELECT \"ID\",\"userid\",\"title\",\"description\",\"image\",\"like_count\" FROM \"Post\" WHERE \"ID\" = {int(PID)}")
+    post = cursor.fetchall()
+    cursor.execute(f"SELECT \"instruction\",\"step_number\" FROM \"Step\" WHERE \"postid\"={PID}")
+    step = cursor.fetchall()
+    cursor.execute(f"SELECT \"ingredient\".\"name\",\"Post_ingredient\".\"amount\" FROM \"Post_ingredient\" INNER JOIN \"ingredient\" ON \"Post_ingredient\".\"ingredientid\" =  \"ingredient\".\"ID\" WHERE \"Post_ingredient\".\"postid\"={int(PID)}")
+    ingredient = cursor.fetchall()
+    temp = {}
+    temp["post"] = post
+    temp["step"] = step
+    temp["ingredient"] = ingredient
+    return {"status_code":202, "content":json.dumps(temp)}
 
-
-#this function return all user post
-def All_user_post(UID):
-    cursor.execute(f"SELECT * FROM \"Post\" WHERE \"postid\" = {int(UID)}")
-    return cursor.fetchall()
 
 
 # this function add the post
