@@ -10,7 +10,7 @@ router = APIRouter()
 # This function sends all available food items to the customer
 
 
-@router.get('/ingredient')
+@router.get('/ingredients')
 async def all_ingredient(response: Response):
     result = All_ingredient()
     return JSONResponse(status_code=result["status_code"], content=result["content"])
@@ -27,7 +27,7 @@ async def specific_ingredient(name, response: Response):
 
 
 # This function receives a new food item from the client
-@router.post('/add_ingredient')
+@router.post('/ingredient')
 async def add_ingredient(item: list[Ingredient]):
     result = Add_ingredient(item)
     return JSONResponse(status_code=result['status_code'], content=result['content'])
@@ -49,7 +49,7 @@ async def add_ingredient(item: list[Ingredient]):
 
 
 # This function deletes an item
-@router.delete('/delete_ingredient/{name}')
+@router.delete('/ingredient/{name}')
 async def delete_ingredient(name, response: Response):
     if not re.fullmatch("^[a-zA-Z\s]+", name):
         return JSONResponse(status_code=403, content="name is not valid")

@@ -22,6 +22,23 @@ export type INewPost = {
   step: Step[]
 };
 
+export type IPost = {
+  name: string;
+  description: string;
+  imageUrl: string;
+  steps: Array<
+    {
+      instruction: string
+    }
+  >;
+  ingredients: Array<
+    {
+      id: string;
+      amount: number;
+    }
+  >
+}
+
 export type IUpdatePost = {
   postId: string;
   caption: string;
@@ -57,7 +74,8 @@ export type Ilogin = {
 
 // Database
 export type Step = {
-
+  instruction: string
+  step_number: number
 }
 
 export type Ingredient = {

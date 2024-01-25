@@ -12,7 +12,7 @@ const dashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
     <div className="w-full md:flex">
       <Topbar />
       <LeftSidebar />
-      <section>{children}</section>
+      <main className='w-full'>{children}</main>
       <Bottombar />
     </div>
   );

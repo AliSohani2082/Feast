@@ -3,15 +3,15 @@ import axios from "axios";
 
 const API = axios.create({ baseURL: "http://localhost:8000", withCredentials: true });
 
-API.interceptors.request.use((req: any) => {
-  if (localStorage.getItem("profile")) {
-    req.headers.Authorization = `Bearer ${
-      JSON.parse(localStorage.getItem("profile") || "").token
-    }`;
-  }
+// API.interceptors.request.use((req: any) => {
+//   if (localStorage.getItem("profile")) {
+//     req.headers.Authorization = `Bearer ${
+//       JSON.parse(localStorage.getItem("profile") || "").token
+//     }`;
+//   }
 
-  return req;
-});
+//   return req;
+// });
 
 // api requests
 // export const fetchPostsBySearch = (searchQuery) =>
@@ -28,3 +28,5 @@ export const createPost = (newPost: INewPost) => API.post("/posts", newPost);
 
 export const signIn = (formData: Ilogin) => API.post("/users/signin", formData);
 export const signUp = (formData: INewUser) => API.post("/users/signup", formData);
+
+export const getIngredients = () => API.get("/ingredients");

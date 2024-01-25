@@ -45,9 +45,10 @@ const SigninForm = () => {
         password: user.password
       })
       console.log(result)
-      router.push("/")
+      // localStorage.setItem("profile", result)
+      // router.push("/")
     } catch(error) {
-      console.log("error ocured")
+      console.log("error ocured", error)
     }
   };
 
@@ -95,13 +96,7 @@ const SigninForm = () => {
           />
 
           <Button type="submit" className="shad-button_primary">
-            {isPending || isUserLoading ? (
-              <div className="flex-center gap-2">
-                <Loader /> Loading...
-              </div>
-            ) : (
-              'Log in'
-            )}
+            Log in
           </Button>
 
           <p className="text-small-regular text-light-2 text-center mt-2">

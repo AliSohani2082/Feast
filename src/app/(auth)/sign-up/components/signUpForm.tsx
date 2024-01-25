@@ -61,7 +61,7 @@ const SignUpForm = () => {
       })
       console.log(result.data[0])
       localStorage.setItem("profile", result.data[0])
-      redirect("/")
+      router.push("/")
     } catch(error) {
       console.log("Error fetching data: ", error)
     }

@@ -1,5 +1,22 @@
+import { describe } from 'node:test';
 import * as z from 'zod';
 
+export const ingredient = z.object({
+  id: z.string(),
+  amount: z.number(),
+})
+
+export const step = z.object({
+  instruction: z.string(),
+})
+
+export const createPostValidation = z.object({
+  name: z.string(),
+  description: z.string(),
+  imageUrl: z.string(),
+  ingredients: ingredient.array(),
+  steps: step.array()
+})
 // ============================================================
 // USER
 // ============================================================

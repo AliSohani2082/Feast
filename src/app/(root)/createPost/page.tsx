@@ -1,4 +1,5 @@
 import React from 'react'
+import CreatePostForm from './components/CreatePostForm'
 
 const CreatePostPage = ({
   params
@@ -7,7 +8,9 @@ const CreatePostPage = ({
 }) => {
  
   return (
-    <div>CreatePostPage</div>
+    <div className='w-full h-full flex justify-center items-center'>
+      <CreatePostForm/>
+    </div>
   )
 }
 
