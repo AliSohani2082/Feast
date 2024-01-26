@@ -43,21 +43,17 @@ export const AmountTypeList = [
 export type AmountType = typeof AmountTypeList[number] | null
 
 interface PostFormProps {
+  ingredientsData?: any
   initialData?: IPost
 }
 
-export const CreatePostForm: React.FC<PostFormProps> = ({ initialData }) => {
+export const CreatePostForm: React.FC<PostFormProps> = ({ initialData, ingredientsData }) => {
   const router = useRouter()
   const [openDelete, setOpenDelete] = useState(false)
   const [openPopover, setOpenPopover] = useState(false)
   const [loading, setLoading] = useState(false)
   const [selectedIngredients, setSelectedIngredients] = useState<Array<{id: string, amount: number, amountType: AmountType}>>([])
   const [steps, setSteps] = useState<string[]>(initialData ? initialData.steps : [])
-
-  const ingredients = cache(async () => {
-    const ingredientsItem: any = await getIngredients()
-    return ingredientsItem.data
-  })
 
   const testIngredients: Array<{id: string, name: string, type: string}> = [
     {
@@ -77,12 +73,9 @@ export const CreatePostForm: React.FC<PostFormProps> = ({ initialData }) => {
     },
   ]
 
-  console.log("hhhhh")
-  console.log(ingredients())
-
-  const title = initialData ? 'Edit billboard' : 'Create billboard'
-  const description = initialData ? 'Edit a billboard' : 'Add a new billboard'
-  const toastMessage = initialData ? 'Billboard updated.' : 'Billboard created'
+  const title = initialData ? 'Edit post' : 'Create post'
+  const description = initialData ? 'Edit a post' : 'Add a new post'
+  const toastMessage = initialData ? 'Post updated.' : 'Post created'
   const action = initialData ? 'Save changes' : 'Create'
 
 
