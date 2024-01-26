@@ -1,7 +1,7 @@
 import { Models } from 'appwrite';
 import Link from 'next/link';
 
-import PostStats from '@/components/shared/PostStats';
+// import PostStats from '@/components/shared/PostStats';
 import { useUserContext } from '@/context/AuthContext';
 
 type GridPostListProps = {
@@ -43,7 +43,7 @@ const GridPostList = ({
                 <p className="line-clamp-1">{post.creator.name}</p>
               </div>
             )}
-            {showStats && <PostStats post={post} userId={user.id} />}
+            {/* {showStats && <PostStats post={post} userId={user.id} />} */}
           </div>
         </li>
       ))}

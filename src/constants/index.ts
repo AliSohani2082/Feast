@@ -21,7 +21,7 @@ export const sidebarLinks = [
   },
   {
     icon: 'GalleryVerticalEnd',
-    route: '/create-post',
+    route: '/createPost',
     label: 'Create Post',
   },
 ] as const;

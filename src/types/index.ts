@@ -14,12 +14,26 @@ export type IUpdateUser = {
 };
 
 export type INewPost = {
-  userId: string;
-  caption: string;
-  file: File[];
-  location?: string;
-  tags?: string;
+  userid: string;
+  title: string;
+  description: string;
+  image: string;
+  ingredient: Ingredient[]
+  step: Step[]
 };
+
+export type IPost = {
+  name: string;
+  description: string;
+  imageUrl: string;
+  steps: Array<string>;
+  ingredients: Array<
+    {
+      id: string;
+      amount: number;
+    }
+  >
+}
 
 export type IUpdatePost = {
   postId: string;
@@ -41,14 +55,28 @@ export type IUser = {
 };
 
 export type INewUser = {
-  name: string;
+  full_name: string;
   email: string;
-  username: string;
   password: string;
-  confirmPassword: string;
+  username: string;
+  profile_image: string;
+  phone_number: string;
 };
 
+export type Ilogin = {
+  username: string;
+  password: string;
+}
+
 // Database
+export type Step = {
+  instruction: string
+  step_number: number
+}
+
+export type Ingredient = {
+
+}
 
 export type Post = {
   id: string;

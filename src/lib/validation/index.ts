@@ -1,5 +1,21 @@
 import * as z from 'zod';
 
+export const ingredient = z.object({
+  id: z.string(),
+  amount: z.number(),
+})
+
+export const step = z.object({
+  instruction: z.string(),
+})
+
+export const createPostValidation = z.object({
+  name: z.string(),
+  description: z.string(),
+  imageUrl: z.string(),
+  ingredients: z.array(ingredient),
+  steps: z.array(z.string())
+})
 // ============================================================
 // USER
 // ============================================================
@@ -21,7 +37,7 @@ export const SignupValidation = z
   });
 
 export const SigninValidation = z.object({
-  email: z.string().email(),
+  username: z.string(),
   password: z
     .string()
     .min(8, { message: 'Password must be at least 8 characters.' }),

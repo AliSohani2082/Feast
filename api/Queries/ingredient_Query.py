@@ -1,17 +1,18 @@
 import re
 import json
 
-from api.functional_function.function import *
-
+from functional_function.function import *
 
 
 def All_ingredient():
     cursor.execute("SELECT * FROM \"ingredient\"")
-    return {"status_code":202 , "content":json.dumps(cursor.fetchall())}
+
+    return {"status_code": 202, "content": json.dumps(cursor.fetchall())}
+
 
 def Specific_ingredient(name):
     cursor.execute(f" SELECT * FROM \"ingredient\" WHERE \"name\" = '{name}'")
-    return {"status_code":202 , "content": json.dumps(cursor.fetchall())}
+    return {"status_code": 202, "content": json.dumps(cursor.fetchall())}
 
 
 def Add_ingredient(item):
@@ -19,18 +20,21 @@ def Add_ingredient(item):
     print(item)
     for i in item:
         print(i)
-        cursor.execute(f"SELECT * FROM \"ingredient\" WHERE \"name\"='{i.name}'")
+        cursor.execute(
+            f"SELECT * FROM \"ingredient\" WHERE \"name\"='{i.name}'")
         result = cursor.fetchall()
         if result:
             re += "this ingredient already exist\n"
         else:
             print(i.name)
-            cursor.execute(f"INSERT INTO \"ingredient\"(name,type,price_per_unit,image,unit_type) VALUES('{i.name}','{i.type}','{i.price_per_unit}','{i.image}','{i.unit_type}')")
+            cursor.execute(
+                f"INSERT INTO \"ingredient\"(name,type,price_per_unit,image,unit_type) VALUES('{i.name}','{i.type}','{i.price_per_unit}','{i.image}','{i.unit_type}')")
             conn.commit()
 
             re += i.name+" added\n"
     print(re)
-    return {"status_code":202, "content":re}
+    return {"status_code": 202, "content": re}
+
 
 def Add_ingredient(item):
 
@@ -62,14 +66,16 @@ def Add_ingredient(item):
             image = i["image"]
             unit_type = i["unit_type"]
 
-            cursor.execute(f"SELECT * FROM \"ingredient\" WHERE \"name\"='{name}'")
+            cursor.execute(
+                f"SELECT * FROM \"ingredient\" WHERE \"name\"='{name}'")
             result = cursor.fetchall()
             if result:
                 message['content'][str(k)] = i["name"] + " already exist"
                 k += 1
                 continue
             else:
-                cursor.execute(f"INSERT INTO \"ingredient\"(name,type,price_per_unit,image,unit_type) VALUES('{name}','{type}','{price_per_unit}','{image}','{unit_type}')")
+                cursor.execute(
+                    f"INSERT INTO \"ingredient\"(name,type,price_per_unit,image,unit_type) VALUES('{name}','{type}','{price_per_unit}','{image}','{unit_type}')")
                 conn.commit()
                 k += 1
                 message['content'][str(k)] = i["name"] + " added"
@@ -77,12 +83,13 @@ def Add_ingredient(item):
     message['status_code'] = 501
     return message
 
+
 def Delete_ingredient(name):
     cursor.execute(f"SELECT name FROM \"ingredient\" WHERE \"name\"='{name}'")
 
     if cursor.fetchall():
         cursor.execute(f"DELETE FROM \"ingredient\" WHERE \"name\" = '{name}'")
         conn.commit()
-        return {"status_code":202 ,"content":"ingredient successfully removed"}
+        return {"status_code": 202, "content": "ingredient successfully removed"}
     else:
-        return {"status_code":500 , "content":"Not Found"}
+        return {"status_code": 500, "content": "Not Found"}

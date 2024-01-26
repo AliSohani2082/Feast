@@ -1,8 +1,8 @@
 from fastapi import APIRouter
 from starlette.responses import JSONResponse
 
-from api.Queries.postingredient_Query import *
-from api.model.models import *
+from Queries.postingredient_Query import *
+from model.models import *
 
 
 router = APIRouter()
@@ -31,7 +31,6 @@ async def add_ingredient(item: post_ingredient):
 
 # This function removes a material from a post
 @router.delete('/delete_postI/{PID}/{IID}')
-async def delete_ingredient(PID,IID):
-    result = Delete_ingredient(PID,IID)
+async def delete_ingredient(PID, IID):
+    result = Delete_ingredient(PID, IID)
     return JSONResponse(status_code=result["status_code"], content=result["content"])
-
