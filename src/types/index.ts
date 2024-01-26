@@ -29,7 +29,8 @@ export type IPost = {
   steps: Array<string>;
   ingredients: Array<
     {
-      id: string;
+      amountType: string
+      ingredientId: string;
       amount: number;
     }
   >

@@ -36,7 +36,7 @@ async def specific_post(pid):
 
 
 # This function gets the information for a new post
-@router.post('/add_post')
+@router.post('/post')
 async def add_post(item: Postdetails):
 
     result = Add_post(item.userid, item.name, item.description,

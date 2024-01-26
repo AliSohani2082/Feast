@@ -5,7 +5,6 @@ import { cache, cloneElement, useState } from 'react'
 import { Trash, Check, Minus, Plus, PlusCircle } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useToast } from '@/components/ui/use-toast'
 import axios from 'axios'
 import { useParams, useRouter } from 'next/navigation'
 import { createPostValidation } from '@/lib/validation'
@@ -18,6 +17,7 @@ import { createPostValidation } from '@/lib/validation'
 //   Input,
 //   ImageUpload,
 // } from '@/components/ui'
+import { toast } from 'sonner'
 import { cn } from '@/lib/utils'
 import ImageUpload from '@/components/ui/imageUpload'
 import { Button } from '@/components/ui/button'
@@ -30,7 +30,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover'
 import { Command, CommandInput, CommandList, CommandGroup, CommandEmpty, CommandItem } from '@/components/ui/command'
-import { getIngredients } from '@/lib/api'
+import { createPost, getIngredients } from '@/lib/api'
 import IngredientItem from './IngredientItem'
 
 type PostFormValues = z.infer<typeof createPostValidation>
@@ -91,24 +91,21 @@ export const CreatePostForm: React.FC<PostFormProps> = ({ initialData, ingredien
   })
 
   const onSubmit = async (data: PostFormValues) => {
-    // try {
-    //   setLoading(true)
-    //   if (initialData) {
-    //     await axios.patch(
-    //       `/api/${params.storeId}/billboards/${params.billboardId}`,
-    //       data,
-    //     )
-    //   } else {
-    //     await axios.post(`/api/${params.storeId}/billboards`, data)
-    //   }
-    //   router.refresh()
-    //   router.push(`/${params.storeId}/billboards`)
-    //   toast.success(toastMessage)
-    // } catch (error) {
-    //   toast.error('Something went wrong.')
-    // } finally {
-    //   setLoading(false)
-    // }
+    try {
+      setLoading(true)
+      if (initialData) {
+        
+      } else {
+        const result = createPost(data)
+        console.log("cereated Post", result)
+      }
+      router.refresh()
+      // router.push(`/${params.storeId}/billboards`)
+    } catch (error) {
+      // toast.error('Something went wrong.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const onDelete = async () => {
@@ -290,7 +287,7 @@ export const CreatePostForm: React.FC<PostFormProps> = ({ initialData, ingredien
                             <div key={index} className='flex w-full justify-stretch items-start gap-2'>
                               <span className='w-20'>{`Step ${index}:`}</span>
                               <Textarea
-                                value={field.value[index]}
+                                value={step}
                                 disabled={field.disabled}
                                 onChange={(e) => {
                                   const newSteps = [...steps]

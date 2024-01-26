@@ -6,7 +6,7 @@ from starlette.responses import JSONResponse
 from Queries.user_Query import *
 from model.models import *
 
-from api.functional_function import function
+from functional_function import function
 
 router = APIRouter()
 
@@ -77,3 +77,9 @@ async def change_password(item: Password):
         result = Change_password(
             item.username, item.prepassword, item.newpassword)
         return JSONResponse(status_code=result["status_code"], content=result["content"])
+
+
+@router.delete('/user/{id}')
+async def delete_user(id):
+    result = Delete_user(id)
+    return JSONResponse(status_code=result["status_code"], content=result["content"])

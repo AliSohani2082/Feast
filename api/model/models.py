@@ -38,7 +38,7 @@ class Step_list(BaseModel):
 
 class Post_ingredient(BaseModel):
     amountType: str
-    amount: str
+    amount: int
     ingredientid: int
 
 

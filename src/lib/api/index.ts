@@ -1,4 +1,4 @@
-import { INewPost, INewUser, Ilogin } from "@/types";
+import { INewPost, INewUser, Ilogin, IPost } from "@/types";
 import axios from "axios";
 
 const API = axios.create({ baseURL: "http://localhost:8000", withCredentials: true });
@@ -20,7 +20,7 @@ const API = axios.create({ baseURL: "http://localhost:8000", withCredentials: tr
 //       searchQuery.tags
 //     }`
 //   );
-export const createPost = (newPost: INewPost) => API.post("/posts", newPost);
+// export const createPost = (newPost: INewPost) => API.post("/posts", newPost);
 // export const updatePost = (id, updatedPost) =>
 //   API.patch(`/posts/${id}`, updatedPost);
 // export const deletePost = (id) => API.delete(`/posts/${id}`);
@@ -30,3 +30,4 @@ export const signIn = (formData: Ilogin) => API.post("/users/signin", formData);
 export const signUp = (formData: INewUser) => API.post("/users/signup", formData);
 
 export const getIngredients = () => API.get("/ingredients");
+export const createPost = (newPost: IPost) => API.post("/post", newPost)

@@ -1,4 +1,4 @@
-from api.functional_function.function import conn, cursor
+from functional_function.function import conn, cursor
 import json
 
 

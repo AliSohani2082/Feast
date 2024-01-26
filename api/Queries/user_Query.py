@@ -1,5 +1,5 @@
 import hashlib
-from api.functional_function.function import conn, cursor
+from functional_function.function import conn, cursor
 import json
 
 
@@ -81,3 +81,8 @@ def Change_password(u, pre, new):
         return {"status_code": 202, "content": "Password changed successfully."}
     else:
         return {"status_code": 406, "content": "Not Acceptable"}
+
+
+def Delete_user(id):
+    cursor.execute(f"DELETE FROM \"User\" WHERE \"ID\" = {id}")
+    return {"status_code": 202, "content": "user has successfully deleted"}

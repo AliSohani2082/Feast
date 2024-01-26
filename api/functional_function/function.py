@@ -1,6 +1,4 @@
 import psycopg2
-import pandas as pn
-
 
 conn = psycopg2.connect(
     host='ep-sweet-darkness-58939442.il-central-1.aws.neon.tech',

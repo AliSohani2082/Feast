@@ -1,7 +1,8 @@
 import * as z from 'zod';
 
 export const ingredient = z.object({
-  id: z.string(),
+  ingredientId: z.string(),
+  amountType: z.string(),
   amount: z.number(),
 })
 

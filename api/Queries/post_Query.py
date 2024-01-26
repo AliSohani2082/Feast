@@ -56,7 +56,7 @@ def Add_post(userid, TITLE, DESCRIPTION, IMAGE, INGREDIENT, STEPS):
         step_number += 1
 
     for i in INGREDIENT:
-        temp = i.amountType + "   " + i.amountType
+        temp = str(i.amount) + " " + i.amountType
         cursor.execute(
             f"INSERT INTO \"Post_ingredient\"(postid,amount,ingredientid) VALUES({int(id[0])},'{temp}','{i.ingredientid}')")
 
