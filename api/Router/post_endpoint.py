@@ -37,7 +37,7 @@ async def specific_post(pid):
 # This function gets the information for a new post
 @router.post('/add_post')
 async def add_post(item: Postdetails):
-    result = Add_post(item.userid,item.title,item.description,item.image,item.ingredient,item.step)
+    result = Add_post(item.userid,item.name,item.description,item.imageUrl,item.ingredients,item.steps)
     return JSONResponse(status_code=result["status_code"], content=result["content"])
 
 
@@ -49,9 +49,9 @@ async def delete_post(PID):
 
 
 # This function receives new information to update a post
-@router.patch('/edit_post/{PID}')
-async def adit_post(PID,item : Postdetails):
-    result = Edit_post(PID,item.title,item.description,item.image,item.like_count,item.amount)
+@router.patch('/edit_post')
+async def adit_post(item : Postedit):
+    result = Edit_post(item.postid,item.name,item.description,item.imageUrl,item.steps,item.ingredients)
     return JSONResponse(status_code=result["status_code"], content=result["content"])
 
 

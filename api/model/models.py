@@ -28,7 +28,8 @@ class Step_list(BaseModel):
     steps:list[Step]
 
 class Post_ingredient(BaseModel):
-    amount:int
+    amountType:str
+    amount:str
     ingredientid: int
 
 class post_ingredient(BaseModel):
@@ -39,11 +40,20 @@ class post_ingredient(BaseModel):
 
 class Postdetails(BaseModel):
     userid : int
+    name : str
+    description : str
+    imageUrl : str
+    ingredients: list[Post_ingredient]
+    steps: list[str]
+
+
+class Postedit(BaseModel):
+    postid : int
     title : str
     description : str
     image : str
-    ingredient: list[Post_ingredient]
-    step: list[Step]
+    ingredients: list[Post_ingredient]
+    steps: list[str]
 
 class Ingredient(BaseModel):
     name : str
@@ -53,9 +63,8 @@ class Ingredient(BaseModel):
     unit_type : str
 
 class Step(BaseModel):
-    amount: str
+    step_bumber:str
     instruction: str
-    step_number: str
 
 class Comment(BaseModel):
     postid: int

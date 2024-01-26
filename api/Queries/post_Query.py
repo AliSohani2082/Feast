@@ -40,12 +40,14 @@ def Add_post(userid,TITLE, DESCRIPTION, IMAGE,INGREDIENT,STEPS):
     # this line,return the postid that was created
     id = cursor.fetchone()
 
-
+    step_number = 0
     for i in STEPS:
-        cursor.execute(f"INSERT INTO \"Step\"(postid,amount,instruction,step_number) VALUES({int(id[0])},'{i.amount}','{i.instruction}','{i.step_number}')")
+        cursor.execute(f"INSERT INTO \"Step\"(postid,instruction,step_number) VALUES({int(id[0])},'{i}','{step_number}')")
+        step_number += 1
 
     for i in INGREDIENT:
-        cursor.execute(f"INSERT INTO \"Post_ingredient\"(postid,amount,ingredientid) VALUES({int(id[0])},'{i.amount}','{i.ingredientid}')")
+        temp = i.amountType + "   " + i.amountType
+        cursor.execute(f"INSERT INTO \"Post_ingredient\"(postid,amount,ingredientid) VALUES({int(id[0])},'{temp}','{i.ingredientid}')")
 
     conn.commit()
 
@@ -60,10 +62,22 @@ def Delete_post(PID):
 
 
 # this function edit the post information .just post information ,not step or postingredient
-def Edit_post(PID,title,description,image,amount):
-    cursor.execute(f"UPDATE \"Post\" set \"title\" = {title} , \"description\" = {description} , \"image\" = {image} , \"amount\" = {amount} where \"ID\" = {int(PID)}")
-    cursor.commit()
-    return {"status_code":202 , "content":"Updated"}
+def Edit_post(PID,title,description,image,steps,ingredients):
+    cursor.execute(
+        f"UPDATE \"Post\" SET \"title\" = '{title}', \"description\" = '{description}',\"image\" = '{image}',\"time\" = CURRENT_DATE  WHERE \"ID\" = '{PID}'")
+
+
+    step_number = 0
+    for i in steps:
+        cursor.execute(
+            f"UPDATE \"Step\" SET \"instruction\" = '{i.instruction}' WHERE \"postid\" = {PID} AND \"step_number\" = '{i.step_number}'")
+        step_number += 1
+
+    for i in ingredients:
+        cursor.execute(
+            f"UPDATE \"Post_ingredient\" SET ,\"amount\" = '{i.amount}'WHERE \"ingredientid\" = {i.ingredientid}")
+
+    conn.commit()
 
 
 # this function like and  dislike the post with regards to mode parameter .
@@ -79,7 +93,6 @@ def Reaction(PID,UID,mode):
     else:
         return {"status_code":203, "content":"the request is not possible"}
         # raise "the request is not possible"
-
 
 
 

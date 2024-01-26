@@ -6,6 +6,8 @@ from starlette.responses import JSONResponse
 from api.Queries.user_Query import *
 from api.model.models import *
 
+from api.functional_function import function
+
 router = APIRouter()
 
 # http://localhost:8000/register_user
@@ -13,6 +15,7 @@ router = APIRouter()
 @router.get('/user')
 async def all_user():
     result = All_user()
+    # table()
     return JSONResponse(status_code=202 ,content=result["content"])
 
 
