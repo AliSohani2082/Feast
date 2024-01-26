@@ -9,7 +9,6 @@ import { INavLink } from '@/types';
 import { sidebarLinks } from '@/constants';
 import Loader from '@/components/shared/Loader';
 import { Button } from '@/components/ui/button';
-import { useSignOutAccount } from '@/lib/react-query/queries';
 import { useUserContext, INITIAL_USER } from '@/context/AuthContext';
 import Logo from '@/components/shared/Logo';
 
@@ -17,22 +16,19 @@ const LeftSidebar = () => {
   const router = useRouter();
   const pathname = usePathname();
   const { user, setUser, setIsAuthenticated, isLoading } = useUserContext();
-
-  const { mutate: signOut } = useSignOutAccount();
-
   const handleSignOut = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
     console.log('wana signout');
-    signOut();
+    // signOut();
     setIsAuthenticated(false);
     setUser(INITIAL_USER);
     router.push('/sign-in');
   };
 
   return (
-    <nav className="leftsidebar">
+    <nav className="hidden md:flex px-6 py-10 flex-col border-l-2 justify-between min-w-[270px] bg-dark-2">
       <div className="flex flex-col gap-11">
         <Logo size="md" />
 
@@ -64,7 +60,7 @@ const LeftSidebar = () => {
             return (
               <li
                 key={link.label}
-                className={`leftsidebar-link group ${
+                className={`rounded-lg base-medium hover:bg-primary-500 transition group ${
                   isActive && 'bg-primary-500'
                 }`}
               >

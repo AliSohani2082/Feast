@@ -26,11 +26,7 @@ export type IPost = {
   name: string;
   description: string;
   imageUrl: string;
-  steps: Array<
-    {
-      instruction: string
-    }
-  >;
+  steps: Array<string>;
   ingredients: Array<
     {
       id: string;

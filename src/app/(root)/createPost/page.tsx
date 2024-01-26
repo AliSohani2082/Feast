@@ -1,17 +1,14 @@
 import React from 'react'
-import CreatePostForm from './components/CreatePostForm'
+import { CreatePostForm } from './components/CreatePostForm'
 
-const CreatePostPage = ({
-  params
-}: {
-  params: { postId: string }
-}) => {
- 
+type Props = {}
+
+const createPostPage = (props: Props) => {
   return (
-    <div className='w-full h-full flex justify-center items-center'>
+    <div className='flex flex-col items-center justify-center'>
       <CreatePostForm/>
     </div>
   )
 }
 
-export default CreatePostPage
+export default createPostPage

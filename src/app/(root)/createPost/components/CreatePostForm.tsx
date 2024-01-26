@@ -1,8 +1,8 @@
 'use client'
 
 import *  as z from 'zod'
-import { cache, useState } from 'react'
-import { Trash, Check, Minus, Plus } from 'lucide-react'
+import { cache, cloneElement, useState } from 'react'
+import { Trash, Check, Minus, Plus, PlusCircle } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useToast } from '@/components/ui/use-toast'
@@ -31,20 +31,29 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover'
 import { Command, CommandInput, CommandList, CommandGroup, CommandEmpty, CommandItem } from '@/components/ui/command'
 import { getIngredients } from '@/lib/api'
+import IngredientItem from './IngredientItem'
 
 type PostFormValues = z.infer<typeof createPostValidation>
+
+export const AmountTypeList = [
+  "Kilogram" , "Gram", "Milligram", "Liter", "Teaspoon", "Tablespoon", "Cup", "Pint", "Quart", "Glass", "Ounce", "Pound", "Dozen", "Piece", "Drum", "Dish", "Box", "Bundle", "Bottle", "Can", "Jar", "Pack", "Packet", "Pouch", "Bag", "Bunch", "Bowl", "Plate", "Plateful", "Canister", "Jarful",  "Canful", "Crate", "Crateful", "Barrel", "Barrelful", "Bunch", "Bunchful", "Bowl", "Bowlful", "Plate", "Plateful", "Canister", "Jarful", "Canful", "Crate", "Crateful", "Barrel", "Barrelful", "Bunch", "Bunchful", "Bowl", "Bowlful", "Plate", "Plateful"
+
+]
+
+export type AmountType = typeof AmountTypeList[number] | null
 
 interface PostFormProps {
   initialData?: IPost
 }
 
-const BillboardForm: React.FC<PostFormProps> = ({ initialData }) => {
+export const CreatePostForm: React.FC<PostFormProps> = ({ initialData }) => {
   const router = useRouter()
   const [openDelete, setOpenDelete] = useState(false)
   const [openPopover, setOpenPopover] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [selectedIngredients, setSelectedIngredients] = useState<Array<{id: string, amount: number}>>([])
-  
+  const [selectedIngredients, setSelectedIngredients] = useState<Array<{id: string, amount: number, amountType: AmountType}>>([])
+  const [steps, setSteps] = useState<string[]>(initialData ? initialData.steps : [])
+
   const ingredients = cache(async () => {
     const ingredientsItem: any = await getIngredients()
     return ingredientsItem.data
@@ -54,7 +63,7 @@ const BillboardForm: React.FC<PostFormProps> = ({ initialData }) => {
     {
       name: "milk",
       type: "dairy",
-      id: "1",
+      id: "4",
     },
     {
       name: "flover",
@@ -83,7 +92,7 @@ const BillboardForm: React.FC<PostFormProps> = ({ initialData }) => {
       name: "",
       description: "",
       imageUrl: "",
-      steps: [],
+      steps: ["dd"],
       ingredients: []
     },
   })
@@ -155,9 +164,9 @@ const BillboardForm: React.FC<PostFormProps> = ({ initialData }) => {
             onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-8 w-full flex flex-col justify-start items-start"
           >
-            <div className='flex flex-col justify-stretch items-stretch'>
-              <div className='flex flex-row justify-stretch items-stretch gap-4'>
-                <div>
+            <div className='flex flex-col justify-stretch w-full items-stretch'>
+              <div className='flex flex-row justify-stretch w-full items-stretch gap-4'>
+                <div className='w-1/2'>
                   <FormField
                     control={form.control}
                     name="name"
@@ -178,7 +187,7 @@ const BillboardForm: React.FC<PostFormProps> = ({ initialData }) => {
                       <FormItem>
                         <FormLabel>Label</FormLabel>
                         <FormControl>
-                          <Textarea disabled={loading} placeholder='describe the dish' {...field}/>
+                          <Textarea className='shad-input' disabled={loading} placeholder='describe the dish' {...field}/>
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -203,7 +212,7 @@ const BillboardForm: React.FC<PostFormProps> = ({ initialData }) => {
                     )}
                   />
                 </div>
-                <div>
+                <div className='w-1/2'>
                   <FormField
                     control={form.control}
                     name="ingredients"
@@ -211,10 +220,13 @@ const BillboardForm: React.FC<PostFormProps> = ({ initialData }) => {
                       <FormItem>
                         <FormLabel>Ingredients</FormLabel>
                         <FormControl>
-                          <div className='flex flex-col justify-stretch items-stretch'>
+                          <div className='flex flex-col justify-stretch gap-2 items-stretch'>
                             <Popover open={openPopover} onOpenChange={setOpenPopover}>
                               <PopoverTrigger>
-                                <Button>Add Ingredient</Button>
+                                <Button className='w-fll flex flex-row justify-between items-center gap-2'>
+                                  <PlusCircle className='h-6 w-6' />
+                                  Add Ingredient
+                                </Button>
                               </PopoverTrigger>
                               <PopoverContent side='right'>
                                 <Command>
@@ -224,14 +236,15 @@ const BillboardForm: React.FC<PostFormProps> = ({ initialData }) => {
                                       {testIngredients.map(({id, name, type}) => (
                                         <CommandItem key={id}>
                                           <Button
-                                            variant="default"
+                                            variant="outline"
                                             className='w-full flex flex-row justify-between items-center'
                                             onClick={() => {
                                               if(selectedIngredients.map(({id}) => id).includes(id)) {
-                                                setSelectedIngredients(selectedIngredients.filter(({id}) => id!== id))
+                                                setSelectedIngredients(selectedIngredients.filter((ing) => ing.id !== id))
                                               } else {
-                                                setSelectedIngredients([...selectedIngredients, {id, amount: 0}])
+                                                setSelectedIngredients([...selectedIngredients, {id: id, amountType: null, amount: 0}])
                                               }
+                                              field.onChange()
                                               setOpenPopover(false)
                                             }}
                                           >
@@ -239,7 +252,7 @@ const BillboardForm: React.FC<PostFormProps> = ({ initialData }) => {
                                               <Check
                                                 className={cn(
                                                   "mr-2 h-4 w-4",
-                                                  selectedIngredients.map(({id}) => id).includes(id) ? "opacity-100" : "opacity-0"
+                                                  selectedIngredients.map((ing) => ing.id).includes(id) ? "opacity-100" : "opacity-0"
                                                 )}
                                               />
                                               <span>{name}</span>
@@ -253,31 +266,16 @@ const BillboardForm: React.FC<PostFormProps> = ({ initialData }) => {
                                 </Command>
                               </PopoverContent>
                             </Popover>
-                            {selectedIngredients.map(({id, amount}) => {
-                              const ing = testIngredients.find(({id}) => id === id)
-                              return (
-                                <div key={id} className='flex flex-row justify-between items-center'>
-                                  <span>{ing?.name}</span>
-                                  <div className='flex flex-row justify-between items-center'>
-                                    <Button
-                                      variant="default"
-                                      className='w-16'
-                                      onClick={() => setSelectedIngredients([...selectedIngredients, {id, amount: amount - 1}])}
-                                    >
-                                      <Minus className='h-4 w-4' />
-                                    </Button>
-                                    <Input type='number' value={amount} onChange={(e) => setSelectedIngredients([...selectedIngredients, {id, amount: parseInt(e.target.value)}])} />
-                                    <Button
-                                      variant="default"
-                                      className='w-16'
-                                      onClick={() => setSelectedIngredients([...selectedIngredients, {id, amount: amount + 1}])}
-                                    >
-                                      <Plus className='h-4 w-4' />
-                                    </Button>
-                                  </div>
-                                </div>
-                              )
-                            })}
+                            {selectedIngredients.map(({id, amount}) => (
+                              <IngredientItem
+                                key={id}
+                                id={id}
+                                amount={amount}
+                                selectedIngredients={selectedIngredients}
+                                setSelectedIngredients={setSelectedIngredients}
+                                testIngredients={testIngredients}
+                              />
+                            ))}
                           </div>
                         </FormControl>
                         <FormMessage />
@@ -285,6 +283,55 @@ const BillboardForm: React.FC<PostFormProps> = ({ initialData }) => {
                     )}
                   />
                 </div>
+              </div>
+              <div className='mt-8'>
+                <FormField
+                  control={form.control}
+                  name="steps"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Steps</FormLabel>
+                      <FormControl>
+                        <div {...field} className='flex flex-col justify-center items-start gap-2'>
+                          {steps.map((step, index) => (
+                            <div key={index} className='flex w-full justify-stretch items-start gap-2'>
+                              <span className='w-20'>{`Step ${index}:`}</span>
+                              <Textarea
+                                value={field.value[index]}
+                                disabled={field.disabled}
+                                onChange={(e) => {
+                                  const newSteps = [...steps]
+                                  newSteps[index] = e.target.value
+                                  setSteps(newSteps)
+                                  field.onChange(newSteps)
+                                }}
+                                placeholder={`Write the step number ${index}`}
+                              />
+                              <Button
+                                onClick={() => {
+                                  const newSteps = [...steps]
+                                  newSteps.splice(index, 1)
+                                  setSteps(newSteps)
+                                  field.onChange(newSteps)
+                                }}
+                              >
+                                <Trash className='h-6 w-6' />
+                              </Button>
+                            </div>
+                          ))}
+                          <Button
+                            onClick={() => {
+                              const newSteps = [...steps, ""]
+                              setSteps(newSteps)
+                              field.onChange(newSteps)
+                            }}
+                          >Add Step</Button>
+                        </div>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
               </div>
             </div>
             <Button disabled={loading} className="ml-auto" type="submit">
@@ -296,5 +343,3 @@ const BillboardForm: React.FC<PostFormProps> = ({ initialData }) => {
     </Card>
   )
 }
-
-export default BillboardForm

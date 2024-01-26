@@ -1,15 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+// import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { AuthProvider } from '@/context/AuthContext';
-import QueryProvider from '@/lib/react-query/QueryProvider';
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--inter-font',
-});
+// const inter = Inter({
+//   subsets: ['latin'],
+//   display: 'swap',
+//   variable: '--inter-font',
+// });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -24,13 +23,11 @@ export default function RootLayout({
   return (
     // <AuthProvider>
     <html lang="en">
-      <body className={`${inter.className}`}>
-        <QueryProvider>
-          {/* <AuthProvider> */}
-          <main className="flex h-screen">{children}</main>
-          <Toaster />
-          {/* </AuthProvider> */}
-        </QueryProvider>
+      <body>
+        {/* <AuthProvider> */}
+        <main className="flex h-screen">{children}</main>
+        <Toaster />
+        {/* </AuthProvider> */}
       </body>
     </html>
     // </AuthProvider>

@@ -10,10 +10,10 @@ type DashboardLayoutProps = {
 const dashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   return (
     <div className="w-full md:flex">
-      <Topbar />
+      {/* <Topbar /> */}
       <LeftSidebar />
       <main className='w-full'>{children}</main>
-      <Bottombar />
+      {/* <Bottombar /> */}
     </div>
   );
 };
