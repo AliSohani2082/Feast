@@ -1,10 +1,12 @@
-from functional_function.function import conn, cursor
+
+from api.functional_function.function import conn, cursor
+import json
 
 
 def All_post_comment(PID):
     cursor.execute(
         f"SELECT \"Comment\".* , \"User\".\"username\" FROM \"Comment\" INNER JOIN \"User\" ON \"User\".\"ID\" = \"Comment\".\"userid\" WHERE \"Comment\".\"postid\" = {PID}")
-    return {"status_code": 202, "content": cursor.fetchall()}
+    return {"status_code": 202, "content": json.dumps(cursor.fetchall())}
 
 
 # def Specific_comment(PID,UID):

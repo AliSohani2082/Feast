@@ -1,10 +1,11 @@
-from functional_function.function import conn, cursor
+from api.functional_function.function import conn, cursor
+import json
 
 
 def All_ingredient(PID):
     cursor.execute(
         f"SELECT \"Post_ingredient\".*,\"ingredient\".\"name\" FROM \"Post_ingredient\" INNER JOIN  \"ingredient\" ON \"Post_ingredient\".\"ingredientid\" = \"ingredient\".\"ID\" WHERE \"postid\" = {PID}")
-    return {"status_code": 202, "content": cursor.fetchall()}
+    return {"status_code": 202, "content": json.dumps(cursor.fetchall())}
 
 
 def Add_ingredient(item):

@@ -1,9 +1,11 @@
-from functional_function.function import conn, cursor
+
+from api.functional_function.function import conn, cursor
+import json
 
 
 def All_post_steps(PID):
     cursor.execute(f"SELECT * FROM \"Step\" WHERE \"postid\" = {int(PID)}")
-    return {"status_code": 202, "content": cursor.fetchall()}
+    return {"status_code": 202, "content": json.dumps(cursor.fetchall())}
 
 # def Specific_step(PID,SN):
 #     return {"status_code": , "content":}

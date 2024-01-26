@@ -9,6 +9,7 @@ from model.models import *
 
 router = APIRouter()
 
+
 # This function sends all posts to the client
 
 
@@ -37,8 +38,9 @@ async def specific_post(pid):
 # This function gets the information for a new post
 @router.post('/add_post')
 async def add_post(item: Postdetails):
-    result = Add_post(item.userid, item.title, item.description,
-                      item.image, item.ingredient, item.step)
+
+    result = Add_post(item.userid, item.name, item.description,
+                      item.imageUrl, item.ingredients, item.steps)
     return JSONResponse(status_code=result["status_code"], content=result["content"])
 
 
@@ -50,10 +52,10 @@ async def delete_post(PID):
 
 
 # This function receives new information to update a post
-@router.patch('/edit_post/{PID}')
-async def adit_post(PID, item: Postdetails):
-    result = Edit_post(PID, item.title, item.description,
-                       item.image, item.like_count, item.amount)
+@router.patch('/post')
+async def adit_post(item: Postedit):
+    result = Edit_post(item.postid, item.name, item.description,
+                       item.imageUrl, item.steps, item.ingredients)
     return JSONResponse(status_code=result["status_code"], content=result["content"])
 
 
@@ -68,4 +70,10 @@ async def like_post(PID, UID):
 @router.post('/dislike_post/{PID}/{UID}')
 async def dislike_post(PID, UID):
     result = Reaction(PID, UID, mode='dislike')
+    return JSONResponse(status_code=result["status_code"], content=result["content"])
+
+
+@router.post('/posts')
+async def add_posts(item: list[Postdetails]):
+    result = Add_posts(item)
     return JSONResponse(status_code=result["status_code"], content=result["content"])

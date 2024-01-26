@@ -1,10 +1,10 @@
 from pydantic import BaseModel
-from typing import Optional
 
 
 class Login(BaseModel):
     username: str
     password: str
+
 
 class Userinformation(BaseModel):
     full_name: str
@@ -37,7 +37,8 @@ class Step_list(BaseModel):
 
 
 class Post_ingredient(BaseModel):
-    amount: int
+    amountType: str
+    amount: str
     ingredientid: int
 
 
@@ -48,11 +49,20 @@ class post_ingredient(BaseModel):
 
 class Postdetails(BaseModel):
     userid: int
+    name: str
+    description: str
+    imageUrl: str
+    ingredients: list[Post_ingredient]
+    steps: list[str]
+
+
+class Postedit(BaseModel):
+    postid: int
     title: str
     description: str
     image: str
-    ingredient: list[Post_ingredient]
-    step: list[Step]
+    ingredients: list[Post_ingredient]
+    steps: list[str]
 
 
 class Ingredient(BaseModel):
@@ -64,9 +74,8 @@ class Ingredient(BaseModel):
 
 
 class Step(BaseModel):
-    amount: str
+    step_bumber: str
     instruction: str
-    step_number: str
 
 
 class Comment(BaseModel):
