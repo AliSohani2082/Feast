@@ -42,11 +42,12 @@ def Add_post(userid,TITLE, DESCRIPTION, IMAGE,INGREDIENT,STEPS):
 
     step_number = 0
     for i in STEPS:
-        cursor.execute(f"INSERT INTO \"Step\"(postid,instruction,step_number) VALUES({int(id[0])},'{i.instruction}','{step_number}')")
+        cursor.execute(f"INSERT INTO \"Step\"(postid,instruction,step_number) VALUES({int(id[0])},'{i}','{step_number}')")
         step_number += 1
 
     for i in INGREDIENT:
-        cursor.execute(f"INSERT INTO \"Post_ingredient\"(postid,amount,ingredientid) VALUES({int(id[0])},'{i.amount}','{i.ingredientid}')")
+        temp = i.amountType + "   " + i.amountType
+        cursor.execute(f"INSERT INTO \"Post_ingredient\"(postid,amount,ingredientid) VALUES({int(id[0])},'{temp}','{i.ingredientid}')")
 
     conn.commit()
 
