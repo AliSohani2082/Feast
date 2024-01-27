@@ -13,6 +13,16 @@ export type IUpdateUser = {
   file: File[];
 };
 
+export type INewComment = {
+  postid: number;
+  userid: number;
+  content: string;
+}
+
+export type IPostDetail = {
+  postId: string,
+}
+
 export type INewPost = {
   userid: string;
   title: string;

@@ -13,23 +13,20 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
+import { toast } from 'sonner'
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import Loader from '@/components/shared/Loader';
 import { useToast } from '@/components/ui/use-toast';
 
 import { SigninValidation } from '@/lib/validation';
-import { useUserContext } from '@/context/AuthContext';
+import { useAuth } from '@/context/AuthContext';
 import Logo from '@/components/shared/Logo';
 import { signIn } from '@/lib/api';
 import { Card } from '@/components/ui/card';
 
 const SigninForm = () => {
-  const { toast } = useToast();
-  const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
-
   const router = useRouter();
-
   const form = useForm<z.infer<typeof SigninValidation>>({
     resolver: zodResolver(SigninValidation),
     defaultValues: {
@@ -37,16 +34,26 @@ const SigninForm = () => {
       password: '',
     },
   });
-
+  const { login } = useAuth()
   const handleSignin = async (user: z.infer<typeof SigninValidation>) => {
     try {
       const result = await signIn({
         username: `@${user.username}`,
         password: user.password
       })
-      console.log(result)
-      // localStorage.setItem("profile", result)
-      // router.push("/")
+      // const userData = JSON.parse(result.data) 
+      // console.log("ddd")
+      console.log(result.data.content)
+      const userData = {
+        id: `${result.data.content[0][0]}` as string,
+        username: result.data.content[0][4] as string,
+        email: result.data.content[0][2] as string,
+        imageUrl: result.data.content[0][5] as string,
+      }
+      login(userData)
+      // localStorage.setItem("profile", userData)
+      router.push("/")
+      toast.success("signed In seccessfully")
     } catch(error) {
       console.log("error ocured", error)
     }

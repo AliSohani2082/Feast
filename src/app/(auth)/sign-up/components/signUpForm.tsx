@@ -23,17 +23,14 @@ import { useToast } from '@/components/ui/use-toast';
 // import { createUserAccount, signInAccount } from '@/lib/appwrite/api';
 import { SignupValidation } from '@/lib/validation';
 import Logo from '@/components/shared/Logo';
-import { useUserContext } from '@/context/AuthContext';
+import { useAuth } from '@/context/AuthContext';
 import { signUp } from '@/lib/api';
 import { Card } from '@/components/ui/card';
 
 const SignUpForm = () => {
   const router = useRouter();
   const { toast } = useToast();
-  const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
-  // const [isCreatingAccount, setIsCreatingAccount] = useState(false);
-  // const [isSigningInUser, setIsSigningInUser] = useState(false);
-
+  
   const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
     defaultValues: {
@@ -65,7 +62,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <Card className='flex justify-center items-center p-10 sm:w-420 w-1/2'>
+    <Card className='flex justify-center items-center p-10 w-1/2 sm:w-[420px]'>
       <Form {...form}>
         <div className="w-full flex-center flex-col">
           <Logo size="md" />

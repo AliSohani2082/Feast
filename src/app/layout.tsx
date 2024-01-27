@@ -21,15 +21,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // <AuthProvider>
-    <html lang="en">
-      <body>
-        {/* <AuthProvider> */}
-        <main className="flex h-screen">{children}</main>
-        <Toaster />
-        {/* </AuthProvider> */}
-      </body>
-    </html>
-    // </AuthProvider>
+    <AuthProvider>
+      <html lang="en">
+        <body>
+          {/* <AuthProvider> */}
+          <main className="flex h-screen">{children}</main>
+          <Toaster />
+          {/* </AuthProvider> */}
+        </body>
+      </html>
+    </AuthProvider>
   );
 }

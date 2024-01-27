@@ -15,6 +15,8 @@ def Login_user(U, P):
     print(user)
     if user["content"] == "Not Found":
         return {"status_code": 500, "content": "User Not Found"}
+    elif user["content"][0][7] == True:
+        return {"status_code": 500, "content": "User is band"}
     elif user["content"][0][3] == hashlib.md5(P.encode('utf-8') + b"$15-*").hexdigest():
         return {"status_code": 202, "content": user}
     else:
@@ -57,8 +59,17 @@ def Edit_profile(ID, F, E, U, PI, PN):
 def Specific_user(U):
     cursor.execute(f"SELECT * FROM \"User\" WHERE \"username\"= '{U}'")
     result = cursor.fetchall()
-    print("dfadsfsa")
     print(result)
+    if len(result) == 0:
+        return {"status_code": 404, "content": "Not Found"}
+    else:
+
+        return {"status_code": 202, "content": result}
+
+
+def Specific_user_byId(UI):
+    cursor.execute(f"SELECT * FROM \"User\" WHERE \"ID\"= '{UI}'")
+    result = cursor.fetchall()
     if len(result) == 0:
         return {"status_code": 404, "content": "Not Found"}
     else:

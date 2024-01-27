@@ -1,8 +1,8 @@
 'use client'
 
 import *  as z from 'zod'
-import { cache, cloneElement, useState } from 'react'
-import { Trash, Check, Minus, Plus, PlusCircle } from 'lucide-react'
+import { cache, cloneElement, useEffect, useState } from 'react'
+import { Trash, Check, Minus, Plus, PlusCircle, FileDiff } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios from 'axios'
@@ -18,6 +18,7 @@ import { createPostValidation } from '@/lib/validation'
 //   ImageUpload,
 // } from '@/components/ui'
 import { toast } from 'sonner'
+import { AlertModal } from '@/components/modals/alert-modal'
 import { cn } from '@/lib/utils'
 import ImageUpload from '@/components/ui/imageUpload'
 import { Button } from '@/components/ui/button'
@@ -30,7 +31,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover'
 import { Command, CommandInput, CommandList, CommandGroup, CommandEmpty, CommandItem } from '@/components/ui/command'
-import { createPost, getIngredients } from '@/lib/api'
+import { createPost, deletePost, getIngredients } from '@/lib/api'
 import IngredientItem from './IngredientItem'
 
 type PostFormValues = z.infer<typeof createPostValidation>
@@ -44,16 +45,26 @@ export type AmountType = typeof AmountTypeList[number] | null
 
 interface PostFormProps {
   ingredientsData?: any
-  initialData?: IPost
+  initialData?: IPost,
+  postId?: number,
 }
 
-export const CreatePostForm: React.FC<PostFormProps> = ({ initialData, ingredientsData }) => {
+export const CreatePostForm: React.FC<PostFormProps> = ({ initialData, ingredientsData, postId }) => {
   const router = useRouter()
-  const [openDelete, setOpenDelete] = useState(false)
+  const [ingredients, setIngredients] = useState<any[]>([])
   const [openPopover, setOpenPopover] = useState(false)
   const [loading, setLoading] = useState(false)
   const [selectedIngredients, setSelectedIngredients] = useState<Array<{id: string, amount: number, amountType: AmountType}>>([])
   const [steps, setSteps] = useState<string[]>(initialData ? initialData.steps : [])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getIngredients()
+      console.log("ing")
+      console.log(JSON.parse(data.data))
+    }
+    fetchData()
+  }, [])
 
   const testIngredients: Array<{id: string, name: string, type: string}> = [
     {
@@ -78,7 +89,6 @@ export const CreatePostForm: React.FC<PostFormProps> = ({ initialData, ingredien
   const toastMessage = initialData ? 'Post updated.' : 'Post created'
   const action = initialData ? 'Save changes' : 'Create'
 
-
   const form = useForm<PostFormValues>({
     resolver: zodResolver(createPostValidation),
     defaultValues: initialData || {
@@ -90,13 +100,18 @@ export const CreatePostForm: React.FC<PostFormProps> = ({ initialData, ingredien
     },
   })
 
+  useEffect(() => {
+    console.log(form)
+  }, [form])
+
+
   const onSubmit = async (data: PostFormValues) => {
     try {
       setLoading(true)
       if (initialData) {
         
       } else {
-        const result = createPost(data)
+        const result = await createPost(data)
         console.log("cereated Post", result)
       }
       router.refresh()
@@ -109,32 +124,30 @@ export const CreatePostForm: React.FC<PostFormProps> = ({ initialData, ingredien
   }
 
   const onDelete = async () => {
-    // try {
-    //   setLoading(true)
-    //   await axios.delete(
-    //     `/api/${params.storeId}/billboards/${params.billboardId}`,
-    //   )
-    //   router.refresh()
-    //   router.push(`/${params.storeId}/billboards`)
-    //   toast.success('Billboard deleted.')
-    // } catch (error) {
-    //   toast.error(
-    //     'Make sure you removed all categories using this billboard first.',
-    //   )
-    // } finally {
-    //   setLoading(false)
-    //   setOpen(false)
-    // }
+    try {
+      setLoading(true)
+      await deletePost(postId || 0)
+      router.refresh()
+      router.push(`/post/${postId || 0}`)
+      toast.success('Billboard deleted.')
+    } catch (error) {
+      toast.error(
+        'Make sure you removed all categories using this billboard first.',
+      )
+    } finally {
+      setLoading(false)
+      setOpenModal(false)
+    }
   }
-
+  const [openModal, setOpenModal] = useState(false)
   return (
-    <Card className='w-3/4'>
-      {/* <AlertModal
-        isOpen={openDelete}
-  setOpenDelete      onClose={() => setOpen(false)}
+    <Card className='w-full'>
+      <AlertModal
+        isOpen={openModal}
+        onClose={() => setOpenModal(false)}
         onConfirm={onDelete}
         loading={loading}
-      /> */}
+      />
       <CardHeader className="flex flex-col items-start">
         <Heading title={title} description={description} />
         {initialData && (
@@ -142,7 +155,7 @@ export const CreatePostForm: React.FC<PostFormProps> = ({ initialData, ingredien
             disabled={loading}
             variant="destructive"
             size="icon"
-            onClick={() => setOpenDelete(true)}
+            onClick={() => setOpenModal(true)}
           >
             <Trash className="h-4 w-4" />
           </Button>
@@ -224,31 +237,30 @@ export const CreatePostForm: React.FC<PostFormProps> = ({ initialData, ingredien
                                   <CommandList>
                                     <CommandGroup>
                                       {testIngredients.map(({id, name, type}) => (
-                                        <CommandItem key={id}>
-                                          <Button
-                                            variant="outline"
-                                            className='w-full flex flex-row justify-between items-center'
-                                            onClick={() => {
-                                              if(selectedIngredients.map(({id}) => id).includes(id)) {
-                                                setSelectedIngredients(selectedIngredients.filter((ing) => ing.id !== id))
-                                              } else {
-                                                setSelectedIngredients([...selectedIngredients, {id: id, amountType: null, amount: 0}])
-                                              }
-                                              field.onChange()
-                                              setOpenPopover(false)
-                                            }}
-                                          >
-                                            <div className='flex flex-row justify-items-center items-center'>
-                                              <Check
-                                                className={cn(
-                                                  "mr-2 h-4 w-4",
-                                                  selectedIngredients.map((ing) => ing.id).includes(id) ? "opacity-100" : "opacity-0"
-                                                )}
-                                              />
-                                              <span>{name}</span>
-                                            </div>
-                                            <span>{type}</span>
-                                          </Button>
+                                        <CommandItem key={id}
+                                          className='w-full flex flex-row justify-between items-center'
+                                          onSelect={() => {
+                                            if(selectedIngredients.map(({id}) => id).includes(id)) {
+                                              field.onChange(field.value.filter((ing) => ing.ingredientId !== id))
+                                              setSelectedIngredients(selectedIngredients.filter((ing) => ing.id !== id))
+                                            } else {
+                                              field.onChange([...field.value, {ingredientId: id, amountType: null, amount: 0}])
+                                              setSelectedIngredients([...selectedIngredients, {id: id, amountType: null, amount: 0}])
+                                            }
+                                            field.onChange()
+                                            setOpenPopover(false)
+                                          }}
+                                        >
+                                          <div className='flex flex-row justify-items-center items-center'>
+                                            <Check
+                                              className={cn(
+                                                "mr-2 h-4 w-4",
+                                                selectedIngredients.map((ing) => ing.id).includes(id) ? "opacity-100" : "opacity-0"
+                                              )}
+                                            />
+                                            <span>{name}</span>
+                                          </div>
+                                          <span>{type}</span> 
                                         </CommandItem>
                                       ))}
                                     </CommandGroup>
@@ -264,6 +276,35 @@ export const CreatePostForm: React.FC<PostFormProps> = ({ initialData, ingredien
                                 selectedIngredients={selectedIngredients}
                                 setSelectedIngredients={setSelectedIngredients}
                                 testIngredients={testIngredients}
+                                deleteIngredient={() => {
+                                  field.onChange(field.value.filter((ing) => ing.ingredientId !== id))
+                                  setSelectedIngredients(selectedIngredients.filter((ing) => ing.id !== id))
+                                }}
+                                setAmountType={(amountType: AmountType) => {
+                                  const updatedIngredientsField = field.value.map((ingredient) => {
+                                    if (ingredient.ingredientId === id) {
+                                      return { ...ingredient, amountType: amountType };
+                                    }
+                                    return ingredient;
+                                  });
+                                  const updatedIngredients = selectedIngredients.map((ingredient) => {
+                                    if (ingredient.id === id) {
+                                      return { ...ingredient, amountType: amountType };
+                                    }
+                                    return ingredient;
+                                  });
+                                  setSelectedIngredients(updatedIngredients)
+                                  field.onChange(updatedIngredients);
+                                }}
+                                updateAmountField={(newAmount: number) => {
+                                  const updatedField = field.value.map((ing) => {
+                                    if( ing.ingredientId === id ) {
+                                      return { ...ing, amount: newAmount }
+                                    }
+                                    return ing;
+                                  })
+                                  field.onChange(updatedField)
+                                }}
                               />
                             ))}
                           </div>

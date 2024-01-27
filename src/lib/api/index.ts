@@ -1,4 +1,4 @@
-import { INewPost, INewUser, Ilogin, IPost } from "@/types";
+import { INewPost, INewUser, Ilogin, IPost, IPostDetail, INewComment } from "@/types";
 import axios from "axios";
 
 const API = axios.create({ baseURL: "http://localhost:8000", withCredentials: true });
@@ -30,4 +30,13 @@ export const signIn = (formData: Ilogin) => API.post("/users/signin", formData);
 export const signUp = (formData: INewUser) => API.post("/users/signup", formData);
 
 export const getIngredients = () => API.get("/ingredients");
+export const getPost = (postId: string) => API.get(`/post/${postId}`)
+export const getUserById = (userId: string) => API.get(`/userById/${userId}`)
+export const getUser = (username: string) => API.get(`/user_posts/${username}`)
+
 export const createPost = (newPost: IPost) => API.post("/post", newPost)
+export const createComment = (newComment: INewComment) => API.post("/comment", newComment)
+export const getComments = (postId: number) => API.get(`/comment/${postId}`)
+
+export const getPosts = () => API.get('/posts')
+export const deletePost = (postId: number) => API.delete(`/post/${postId}`)

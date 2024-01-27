@@ -10,16 +10,6 @@ export const sidebarLinks = [
     label: 'Explore',
   },
   {
-    icon: 'Users',
-    route: '/all-users',
-    label: 'People',
-  },
-  {
-    icon: 'Bookmark',
-    route: '/saved',
-    label: 'Saved',
-  },
-  {
     icon: 'GalleryVerticalEnd',
     route: '/createPost',
     label: 'Create Post',

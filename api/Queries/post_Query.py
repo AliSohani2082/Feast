@@ -15,11 +15,41 @@ def All_post():
 
 
 # this function return all user post
+# def All_user_post(UN):
+#     cursor.execute(
+#         f"SELECT \"Post\".\"ID\",\"Post\".\"userid\",\"Post\".\"title\",\"Post\".\"description\",\"Post\".\"image\",\"Post\".\"like_count\" FROM \"Post\" INNER JOIN \"User\" ON \"Post\".\"userid\" = \"User\".\"ID\" WHERE \"username\" = '{UN}'")
+
+#     return {"status_code": 202, "content": json.dumps(cursor.fetchall())}
+
+# this function return all user post
 def All_user_post(UN):
     cursor.execute(
-        f"SELECT \"Post\".\"ID\",\"Post\".\"userid\",\"Post\".\"title\",\"Post\".\"description\",\"Post\".\"image\",\"Post\".\"like_count\" FROM \"Post\" INNER JOIN \"User\" ON \"Post\".\"userid\" = \"User\".\"ID\" WHERE \"username\" = '{UN}'")
+        f"SELECT \"Post\".\"ID\",\"Post\".\"title\",\"Post\".\"description\",\"Post\".\"image\",\"Post\".\"like_count\" FROM \"Post\" INNER JOIN \"User\" ON \"Post\".\"userid\" = \"User\".\"ID\" WHERE \"username\" = '{UN}'")
+    posts = cursor.fetchall()
 
-    return {"status_code": 202, "content": json.dumps(cursor.fetchall())}
+    cursor.execute(
+        f"SELECT \"Post\".\"userid\",\"User\".\"full_name\",\"User\".\"email\",\"User\".\"username\",\"User\".\"profile_image\", \"User\".\"banned\" FROM \"Post\" INNER JOIN \"User\" ON \"Post\".\"userid\" = \"User\".\"ID\" WHERE \"username\" = '{UN}'")
+    data = cursor.fetchall()
+
+    user_info = {
+        "userid": data[0][0],
+        "full_name": data[0][1],
+        "email": data[0][2],
+        "username": data[0][3],
+        "profile_image": data[0][4],
+        "banned": data[0][5],
+        "posts": [
+            {
+                "postid": post[0],
+                "title": post[1],
+                "description": post[2],
+                "image": post[3],
+                "likes": post[4]
+            } for post in posts
+        ]
+    }
+
+    return {"status_code": 202, "content": json.dumps(user_info)}
 
 
 # this function return the specific post
@@ -32,7 +62,7 @@ def Specific_post(PID):
         f"SELECT \"instruction\",\"step_number\" FROM \"Step\" WHERE \"postid\"={PID}")
     step = cursor.fetchall()
     cursor.execute(
-        f"SELECT \"ingredient\".\"name\",\"Post_ingredient\".\"amount\" FROM \"Post_ingredient\" INNER JOIN \"ingredient\" ON \"Post_ingredient\".\"ingredientid\" =  \"ingredient\".\"ID\" WHERE \"Post_ingredient\".\"postid\"={int(PID)}")
+        f"SELECT \"ingredient\".\"name\",\"ingredient\".\"unit_type\",\"Post_ingredient\".\"amount\" FROM \"Post_ingredient\" INNER JOIN \"ingredient\" ON \"Post_ingredient\".\"ingredientid\" =  \"ingredient\".\"ID\" WHERE \"Post_ingredient\".\"postid\"={int(PID)}")
     ingredient = cursor.fetchall()
     temp = {}
     temp["post"] = post
@@ -131,3 +161,9 @@ def Add_posts(item):
         re += i.title + "The post was published successfully\n"
 
     return {"status_code": 202, "content": re}
+
+
+def n_rangdom_post():
+    cursor.execute(f"SELECT \"Post\".\"ID\",\"Post\".\"userid\",\"Post\".\"title\",\"Post\".\"description\",\"Post\".\"image\",\"Post\".\"like_count\",\"User\".\"username\", \"User\".\"profile_image\" FROM \"Post\" INNER JOIN \"User\" ON \"User\".\"ID\" = \"Post\".\"userid\" ORDER BY \"like_count\" ASC LIMIT 10 ")
+
+    return {"status_code": 202, "content": json.dumps(cursor.fetchall())}

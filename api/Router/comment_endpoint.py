@@ -21,14 +21,14 @@ async def all_post_comment(PID):
 
 
 # This function receives a new comment
-@router.post('/add_comment')
+@router.post('/comment')
 async def add_comment(item: Comment):
     result = Add_comment(item.postid, item.userid, item.content)
     return JSONResponse(status_code=result["status_code"], content=result["content"])
 
 
 # This function receives new information to edit a comment
-@router.patch('/edit_comment')
+@router.patch('/comment')
 async def edit_comment(item: edit_comment):
     result = Edit_comment(item.ID, item.content)
     return JSONResponse(status_code=result["status_code"], content=result["content"])

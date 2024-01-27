@@ -14,7 +14,7 @@ const createPostPage = async (props: Props) => {
   // const ingredientsData = await ingredients()
   
   return (
-    <div className='flex flex-col items-center justify-center'>
+    <div className='flex flex-col w-3/4 items-center justify-center'>
       <CreatePostForm/>
     </div>
   )

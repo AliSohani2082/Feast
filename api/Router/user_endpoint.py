@@ -59,6 +59,13 @@ async def edit_profile(item: Userinformationforedit):
 
 
 # This function receives the username and sends the profile of a specific user to the client
+
+@router.get('/userById/{userId}')
+async def specific_user(userId):
+    result = Specific_user_byId(userId)
+    return JSONResponse(status_code=result["status_code"], content=result["content"])
+
+
 @router.get('/user/{username}')
 async def specific_user(username):
     if not re.fullmatch("^@[a-zA-Z0-9\._]+", username):

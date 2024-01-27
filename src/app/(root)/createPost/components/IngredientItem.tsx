@@ -17,9 +17,12 @@ type IngredientItemProps = {
   selectedIngredients: Array<{id: string, amount: number, amountType: AmountType}>
   setSelectedIngredients: React.Dispatch<React.SetStateAction<Array<{id: string, amount: number, amountType: AmountType}>>>
   testIngredients: Array<{id: string, name: string, type: string}>
+  setAmountType: (amountType: string) => void
+  updateAmountField: (amount: number) => void
+  deleteIngredient: () => void
 }
 
-const IngredientItem: React.FC<IngredientItemProps> = ({id, amount, selectedIngredients, setSelectedIngredients, testIngredients}) => {
+const IngredientItem: React.FC<IngredientItemProps> = ({id, amount, selectedIngredients, setSelectedIngredients, testIngredients, setAmountType, updateAmountField, deleteIngredient}) => {
   const [open, setOpen] = useState(false)
   const [unit, setUnit] = useState<AmountType>(null)
 
@@ -40,7 +43,10 @@ const IngredientItem: React.FC<IngredientItemProps> = ({id, amount, selectedIngr
         <Button
           variant="ghost"
           className=''
-          onClick={() => updateAmount(amount - 1)}
+          onClick={() => {
+            updateAmountField(amount - 1)
+            updateAmount(amount - 1)
+          }}
         >
           <Minus className='h-4 w-4' />
         </Button>
@@ -48,7 +54,10 @@ const IngredientItem: React.FC<IngredientItemProps> = ({id, amount, selectedIngr
         <Button
           variant="ghost"
           className=''
-          onClick={() => updateAmount(amount + 1)}
+          onClick={() => {
+            updateAmountField(amount + 1)
+            updateAmount(amount + 1)
+          }}
         >
           <Plus className='h-4 w-4' />
         </Button>
@@ -81,7 +90,10 @@ const IngredientItem: React.FC<IngredientItemProps> = ({id, amount, selectedIngr
         </Popover>
       </div>
       <Button
-        onClick={() => setSelectedIngredients(selectedIngredients.filter((ingredient) => ingredient.id!== id))}
+        onClick={() => {
+          deleteIngredient()
+          setSelectedIngredients(selectedIngredients.filter((ingredient) => ingredient.id!== id))}
+        }
       >
         <Trash className='h-4 w-4' />
       </Button>

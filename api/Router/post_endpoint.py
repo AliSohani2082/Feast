@@ -20,7 +20,7 @@ async def all_post():
 
 
 # This function sends all the posts of a specific user to the client
-@router.get('/all_user_posts/{username}')
+@router.get('/user_posts/{username}')
 async def all_user_posts(username):
     if not re.fullmatch("^@[a-zA-Z0-9._]+", username):
         return JSONResponse(status_code=403, content="Username is not valid")
@@ -29,7 +29,7 @@ async def all_user_posts(username):
 
 
 # This function sends a specific post to the client
-@router.get('/specific_post/{pid}')
+@router.get('/post/{pid}')
 async def specific_post(pid):
     result = Specific_post(pid)
     return JSONResponse(status_code=result["status_code"], content=result["content"])
@@ -45,7 +45,7 @@ async def add_post(item: Postdetails):
 
 
 # This function gets the information for a new post
-@router.delete('/delete_post/{PID}')
+@router.delete('/post/{PID}')
 async def delete_post(PID):
     result = Delete_post(PID)
     return JSONResponse(status_code=result["status_code"], content=result["content"])
@@ -53,7 +53,7 @@ async def delete_post(PID):
 
 # This function receives new information to update a post
 @router.patch('/post')
-async def adit_post(item: Postedit):
+async def edit_post(item: Postedit):
     result = Edit_post(item.postid, item.name, item.description,
                        item.imageUrl, item.steps, item.ingredients)
     return JSONResponse(status_code=result["status_code"], content=result["content"])
@@ -77,3 +77,10 @@ async def dislike_post(PID, UID):
 async def add_posts(item: list[Postdetails]):
     result = Add_posts(item)
     return JSONResponse(status_code=result["status_code"], content=result["content"])
+
+
+@router.get("/posts")
+async def getPosts():
+    result = n_rangdom_post()
+    return JSONResponse(status_code=result["status_code"],
+                        content=result["content"])
